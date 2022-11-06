@@ -817,27 +817,22 @@
 				"mustHitSection": true
 			},
 			{
-				"gfSection": false,
+				"lengthInSteps": 16,
 				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
 				"bpm": 100,
-				"sectionBeats": 4,
 				"changeBPM": false,
 				"mustHitSection": true
 			}
 		],
 		"gfVersion": "gf",
 		"player2": "dad",
-		"color": null,
-		"offset": 0,
-		"author": "Kawai Sprite",
 		"song": "Bopeebo",
 		"validScore": true,
 		"needsVoices": true,
 		"stage": "stage",
-		"assetModifier": "base",
-		"bpm": 100,
-		"speed": 1.3
+		"speed": 1.3,
+		"bpm": 100
 	}
 }

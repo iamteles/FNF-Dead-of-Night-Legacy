@@ -1,40 +1,25 @@
 {
-    "songs": [
+    "songs":
+    [
         {
-            "name": "Bopeebo",
-            "character": "dad",
-            "colors": [
-                129,
-                100,
-                223
-            ]
+            "name": "Hushed",
+            "character": "abi",
+            "colors": [129, 100, 223]
         },
         {
-            "name": "Fresh",
-            "character": "dad",
-            "colors": [
-                129,
-                100,
-                223
-            ]
+            "name": "Forewarn",
+            "character": "abi",
+            "colors": [129, 100, 223]
         },
         {
-            "name": "Dadbattle",
-            "character": "dad",
-            "colors": [
-                129,
-                100,
-                223
-            ]
+            "name": "Downward-Spiral",
+            "character": "a",
+            "colors": [129, 100, 223]
         }
     ],
     "locked": false,
-    "weekCharacters": [
-        "dad",
-        "bf",
-        "gf"
-    ],
-    "weekName": "vs. DADDY DEAREST",
+    "weekCharacters": ["dad", "bf", "gf"],
+    "weekName": "dead of night",
     "weekImage": "week1",
     "hideStoryMode": false,
     "hideFreeplay": false

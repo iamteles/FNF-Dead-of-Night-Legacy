@@ -80,20 +80,20 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		add(iconP2);
 
 		scoreBar = new FlxText(FlxG.width / 2, Math.floor(healthBarBG.y + 30), 0, '');
-		scoreBar.setFormat(Paths.font('vcr'), 18, FlxColor.WHITE);
+		scoreBar.setFormat(Paths.font('prime'), 18, FlxColor.WHITE);
 		scoreBar.setBorderStyle(OUTLINE, FlxColor.BLACK, 1.5);
 		scoreBar.antialiasing = !Init.getSetting('Disable Antialiasing');
 		add(scoreBar);
 
 		cornerMark = new FlxText(0, 0, 0, engineDisplay);
-		cornerMark.setFormat(Paths.font('vcr'), 18, FlxColor.WHITE);
+		cornerMark.setFormat(Paths.font('prime'), 18, FlxColor.WHITE);
 		cornerMark.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
 		cornerMark.setPosition(FlxG.width - (cornerMark.width + 5), 5);
 		cornerMark.antialiasing = true;
 		add(cornerMark);
 
 		centerMark = new FlxText(0, (Init.getSetting('Downscroll') ? FlxG.height - 40 : 10), 0, '', 24);
-		centerMark.setFormat(Paths.font('vcr'), 24, FlxColor.WHITE);
+		centerMark.setFormat(Paths.font('prime'), 24, FlxColor.WHITE);
 		centerMark.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
 		centerMark.antialiasing = !Init.getSetting('Disable Antialiasing');
 		centerMark.screenCenter(X);
@@ -108,7 +108,7 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		centerMark.x = Math.floor((FlxG.width / 2) - (centerMark.width / 2));
 
 		autoplayMark = new FlxText(-5, (Init.getSetting('Downscroll') ? centerMark.y - 60 : centerMark.y + 60), FlxG.width - 800, '[AUTOPLAY]\n', 32);
-		autoplayMark.setFormat(Paths.font("vcr"), 32, FlxColor.WHITE, CENTER);
+		autoplayMark.setFormat(Paths.font("prime"), 32, FlxColor.WHITE, CENTER);
 		autoplayMark.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
 		autoplayMark.screenCenter(X);
 		autoplayMark.visible = PlayState.bfStrums.autoplay;
@@ -155,7 +155,7 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 	}
 
 	public var counterTextSize:Int = 18;
-	public var counterTextFont:String = 'vcr';
+	public var counterTextFont:String = 'prime';
 
 	var left = (Init.getSetting('Counter') == 'Left');
 

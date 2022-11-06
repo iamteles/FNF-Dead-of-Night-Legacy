@@ -207,6 +207,9 @@ class PlayState extends MusicBeatState
 	// stores the last combo sprite objects in an array;
 	public static var lastCombo:Array<FNFSprite>;
 
+	public static var beatSpeed:Float = 4;
+	public static var beatZoom:Float = 0;
+
 	var events:Array<TimedEvent> = [];
 
 	function resetVariables()
@@ -222,6 +225,8 @@ class PlayState extends MusicBeatState
 
 		defaultCamZoom = 1.05;
 		cameraSpeed = 1 * Conductor.playbackRate;
+		beatSpeed = 4;
+		beatZoom = 0;
 		forceZoom = [0, 0, 0, 0];
 
 		scriptArray = [];
@@ -1953,12 +1958,12 @@ class PlayState extends MusicBeatState
 
 		if (camZooming)
 		{
-			if ((FlxG.camera.zoom < 1.35 && curBeat % 4 == 0) && (!Init.getSetting('Reduced Movements')))
+			if ((FlxG.camera.zoom < 1.35 && curBeat % beatSpeed == 0) && (!Init.getSetting('Reduced Movements')))
 			{
-				FlxG.camera.zoom += 0.015;
-				camHUD.zoom += 0.05;
+				FlxG.camera.zoom += 0.015 + beatZoom;
+				camHUD.zoom += 0.05 + beatZoom;
 				for (hud in strumHUD)
-					hud.zoom += 0.05;
+					hud.zoom += 0.05 + beatZoom;
 			}
 		}
 
