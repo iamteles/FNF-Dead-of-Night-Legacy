@@ -1,0 +1,11 @@
+## Source Specific
+art/crash-dialog/
+source/states/substates/EditorMenuSubstate.hx
+source/states/editors/StageEditor.hx
+
+## VSCode
+export/
+.vscode/
+APIStuff.hx
+docs/_build
+**/.DS_Store
