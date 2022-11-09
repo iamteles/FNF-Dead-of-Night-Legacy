@@ -304,12 +304,12 @@ class Character extends FNFSprite
 				{
 					danced = !danced;
 					if (danced)
-						playAnim('danceRight$idleSuffix', forced);
+						playAnim('danceRight', forced);
 					else
-						playAnim('danceLeft$idleSuffix', forced);
+						playAnim('danceLeft', forced);
 				}
 				else
-					playAnim('idle$idleSuffix', forced);
+					playAnim('idle', forced);
 			}
 		}
 	}
@@ -317,7 +317,7 @@ class Character extends FNFSprite
 	override public function playAnim(AnimName:String, Force:Bool = false, Reversed:Bool = false, Frame:Int = 0):Void
 	{
 		if (animation.getByName(AnimName) != null)
-			super.playAnim(AnimName, Force, Reversed, Frame);
+			super.playAnim(AnimName + '$idleSuffix', Force, Reversed, Frame);
 
 		if (curCharacter.startsWith('gf'))
 		{

@@ -134,6 +134,9 @@ class PlayState extends MusicBeatState
 	public var camDisplaceX:Float = 0;
 	public var camDisplaceY:Float = 0; // might not use depending on result
 
+	public static var externalCamX:Float = 0; // I HATE FRIDAY NIGHT FUNKIN
+	public var externalCamY:Float = 0; 
+
 	public static var cameraSpeed:Float = 1;
 	public static var defaultCamZoom:Float = 1.05;
 	public static var forceZoom:Array<Float>;
@@ -194,6 +197,8 @@ class PlayState extends MusicBeatState
 	public static var lastEditor:Int = 0;
 
 	var curSection:Int = 0;
+
+	public static var altString:String = "";
 
 	// groups so we can recycle judgements and combo with ease;
 	public var judgementsGroup:FlxTypedGroup<FNFSprite>;
@@ -779,7 +784,6 @@ class PlayState extends MusicBeatState
 						if (startingSong) // mash warning
 						{
 							logTrace('Stop Spamming!', 1, false, PlayState.dialogueHUD);
-							uiHUD.tweenScoreColor('miss', false);
 						}
 						else if (!inCutscene || !endingSong)
 							missNoteCheck(true, key, bfStrums, true);
@@ -1021,8 +1025,8 @@ class PlayState extends MusicBeatState
 					var getCenterX = char.getMidpoint().x + 100;
 					var getCenterY = char.getMidpoint().y - 100;
 
-					camFollow.setPosition(getCenterX + camDisplaceX + char.characterData.camOffsetX,
-						getCenterY + camDisplaceY + char.characterData.camOffsetY);
+					camFollow.setPosition(getCenterX + camDisplaceX + char.characterData.camOffsetX + externalCamX,
+						getCenterY + camDisplaceY + char.characterData.camOffsetY + externalCamY);
 
 					if (char.curCharacter == 'mom')
 						Conductor.songVocals.volume = 1;
@@ -1455,22 +1459,8 @@ class PlayState extends MusicBeatState
 		// alright so we determine which animation needs to play
 		// get alt strings and stuffs
 		var stringArrow:String = '';
-		var altString:String = '';
 
 		var baseString = 'sing' + Receptor.actions[coolNote.noteData].toUpperCase();
-
-		// I tried doing xor and it didnt work lollll
-		if (coolNote.noteAlt > 0)
-			altString = '-alt';
-
-		var altSection = (SONG.notes[Math.floor(curStep / 16)] != null) && (SONG.notes[Math.floor(curStep / 16)].altAnim);
-		if ((altSection) && (character.animOffsets.exists(baseString + '-alt')))
-		{
-			if (altString != '-alt')
-				altString = '-alt';
-			else
-				altString = '';
-		}
 
 		switch (coolNote.noteType)
 		{
@@ -1662,7 +1652,6 @@ class PlayState extends MusicBeatState
 			songScore += score;
 
 		// tween score color based on your rating;
-		uiHUD.tweenScoreColor(baseRating, perfect);
 	}
 
 	public function popNoteSplash(coolNote:Note, noteType:Int, strumline:Strumline)
@@ -1791,7 +1780,6 @@ class PlayState extends MusicBeatState
 		{
 			popJudgement("miss", true, false);
 			healthCall(Timings.judgementsMap.get("miss")[3]);
-			uiHUD.tweenScoreColor("miss", false);
 		}
 
 		// gotta do it manually here lol
@@ -1868,7 +1856,6 @@ class PlayState extends MusicBeatState
 		{
 			Conductor.startMusic();
 			Conductor.songMusic.onComplete = endSong.bind();
-			FlxTween.tween(uiHUD.centerMark, {alpha: 1});
 
 			#if DISCORD_RPC
 			// Song duration in a float, useful for the time left feature

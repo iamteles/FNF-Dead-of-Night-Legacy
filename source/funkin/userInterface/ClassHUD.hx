@@ -23,9 +23,6 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 
 	var scoreColorTween:FlxTween;
 
-	public var cornerMark:FlxText; // engine mark at the upper right corner
-	public var centerMark:FlxText; // song display name and difficulty at the center
-
 	public var healthBarBG:FlxSprite;
 	public var healthBar:FlxBar;
 
@@ -71,6 +68,13 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		// healthBar
 		add(healthBar);
 
+		var healthBarOverlay:FlxSprite = new FlxSprite(0, barY).loadGraphic(Paths.image('UI/healthBarOverlay'));
+		healthBarOverlay.screenCenter(X);
+		healthBarOverlay.scrollFactor.set();
+		healthBarOverlay.blend = ADD;
+		healthBarOverlay.alpha = 0.3;
+		add(healthBarOverlay); // thanks diogo
+
 		iconP1 = new HealthIcon(PlayState.boyfriend.characterData.icon, true);
 		iconP1.y = healthBar.y - (iconP1.height / 2);
 		add(iconP1);
@@ -80,34 +84,12 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		add(iconP2);
 
 		scoreBar = new FlxText(FlxG.width / 2, Math.floor(healthBarBG.y + 30), 0, '');
-		scoreBar.setFormat(Paths.font('prime'), 18, FlxColor.WHITE);
+		scoreBar.setFormat(Paths.font('prime'), 22, FlxColor.WHITE);
 		scoreBar.setBorderStyle(OUTLINE, FlxColor.BLACK, 1.5);
 		scoreBar.antialiasing = !Init.getSetting('Disable Antialiasing');
 		add(scoreBar);
 
-		cornerMark = new FlxText(0, 0, 0, engineDisplay);
-		cornerMark.setFormat(Paths.font('prime'), 18, FlxColor.WHITE);
-		cornerMark.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
-		cornerMark.setPosition(FlxG.width - (cornerMark.width + 5), 5);
-		cornerMark.antialiasing = true;
-		add(cornerMark);
-
-		centerMark = new FlxText(0, (Init.getSetting('Downscroll') ? FlxG.height - 40 : 10), 0, '', 24);
-		centerMark.setFormat(Paths.font('prime'), 24, FlxColor.WHITE);
-		centerMark.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
-		centerMark.antialiasing = !Init.getSetting('Disable Antialiasing');
-		centerMark.screenCenter(X);
-		if (Init.getSetting('Center Display') != 'Nothing')
-			add(centerMark);
-
-		if (Init.getSetting('Center Display') == 'Song Name')
-			centerMark.text = '- $infoDisplay [$diffDisplay] -';
-		else if (Init.getSetting('Center Display') == 'Song Time')
-			centerMark.alpha = 0;
-
-		centerMark.x = Math.floor((FlxG.width / 2) - (centerMark.width / 2));
-
-		autoplayMark = new FlxText(-5, (Init.getSetting('Downscroll') ? centerMark.y - 60 : centerMark.y + 60), FlxG.width - 800, '[AUTOPLAY]\n', 32);
+		autoplayMark = new FlxText(0, (Init.getSetting('Downscroll') ? FlxG.height - 40 : 10), FlxG.width - 800, '[AUTOPLAY]\n', 32);
 		autoplayMark.setFormat(Paths.font("prime"), 32, FlxColor.WHITE, CENTER);
 		autoplayMark.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
 		autoplayMark.screenCenter(X);
@@ -124,31 +106,6 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 
 		add(autoplayMark);
 
-		// counter
-		if (Init.getSetting('Counter') != 'None')
-		{
-			var judgementNameArray:Array<String> = [];
-			for (i in Timings.judgementsMap.keys())
-				judgementNameArray.insert(Timings.judgementsMap.get(i)[0], i);
-			judgementNameArray.sort(function(Obj1:String, Obj2:String):Int
-			{
-				return FlxSort.byValues(FlxSort.ASCENDING, Timings.judgementsMap.get(Obj1)[0], Timings.judgementsMap.get(Obj2)[0]);
-			});
-			for (i in 0...judgementNameArray.length)
-			{
-				var textAsset:FlxText = new FlxText(5
-					+ (!left ? (FlxG.width - 10) : 0),
-					(FlxG.height / 2)
-					- (counterTextSize * (judgementNameArray.length / 2))
-					+ (i * counterTextSize), 0, '', counterTextSize);
-				if (!left)
-					textAsset.x -= textAsset.text.length * counterTextSize;
-				textAsset.setFormat(Paths.font(counterTextFont), counterTextSize, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-				textAsset.scrollFactor.set();
-				timingsMap.set(judgementNameArray[i], textAsset);
-				add(textAsset);
-			}
-		}
 
 		updateScoreText();
 		updateBar();
@@ -156,8 +113,6 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 
 	public var counterTextSize:Int = 18;
 	public var counterTextFont:String = 'prime';
-
-	var left = (Init.getSetting('Counter') == 'Left');
 
 	override public function update(elapsed:Float)
 	{
@@ -177,9 +132,6 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 			autoplaySine += 180 * (elapsed / 4);
 			autoplayMark.alpha = 1 - Math.sin((Math.PI * autoplaySine) / 80);
 		}
-
-		if (Init.getSetting('Center Display') == 'Song Time')
-			updateTime();
 	}
 
 	private var divider:String = " • ";
@@ -193,22 +145,11 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 
 		tempScore = 'Score: ${PlayState.songScore}'
 			+ (displayAccuracy ? divider + 'Accuracy: ${Std.string(Math.floor(Timings.getAccuracy() * 100) / 100)}%' : '')
-			+ (displayAccuracy ? !unrated ? ' [' + Timings.comboDisplay + divider + Timings.returnScoreRating() + ']' : ' [' + Timings.returnScoreRating() + ']' : '')
-			+ (displayAccuracy ? divider + 'Combo Breaks: ${PlayState.misses}' : '')
+			+ (displayAccuracy ? divider + 'Misses: ${PlayState.misses}' : '')
 			+ '\n';
 
 		scoreBar.text = tempScore;
 		scoreBar.x = Math.floor((FlxG.width / 2) - (scoreBar.width / 2));
-
-		// update counter
-		if (Init.getSetting('Counter') != 'None')
-		{
-			for (i in timingsMap.keys())
-			{
-				timingsMap[i].text = '${(i.charAt(0).toUpperCase() + i.substring(1, i.length))}: ${Timings.gottenJudgements.get(i)}';
-				timingsMap[i].x = (5 + (!left ? (FlxG.width - 10) : 0) - (!left ? (6 * counterTextSize) : 0));
-			}
-		}
 
 		// update playstate
 		PlayState.detailsSub = scoreBar.text;
@@ -217,22 +158,9 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 
 	public function updateBar()
 	{
-		if (Init.getSetting('Colored Health Bar'))
-			healthBar.createFilledBar(barEnemy, barPlayer);
-		else
-			healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
+		healthBar.createFilledBar(barEnemy, barPlayer);
 		healthBar.scrollFactor.set();
 		healthBar.updateBar();
-	}
-
-	public function updateTime()
-	{
-		var currentTime = flixel.util.FlxStringUtil.formatTime(Math.floor(Conductor.songPosition / 1000), false);
-		var songLength = flixel.util.FlxStringUtil.formatTime(Math.floor((PlayState.songLength) / 1000), false);
-		centerMark.text = '- [$currentTime / $songLength] -';
-
-		// *center* the thing, will you?
-		centerMark.x = Math.floor((FlxG.width / 2) - (centerMark.width / 2));
 	}
 
 	public function beatHit(curBeat:Int)
@@ -241,40 +169,6 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		{
 			iconP1.bop(60 / Conductor.bpm);
 			iconP2.bop(60 / Conductor.bpm);
-		}
-	}
-
-	public function tweenScoreColor(rating:String, perfect:Bool)
-	{
-		if (Init.getSetting('Animated Score Color'))
-		{
-			if (scoreColorTween != null)
-				scoreColorTween.cancel();
-
-			var judgeColors:Map<String, FlxColor> = [
-				'sick' => FlxColor.CYAN,
-				'good' => FlxColor.LIME,
-				'bad' => FlxColor.ORANGE,
-				'shit' => FlxColor.PURPLE,
-				'miss' => FlxColor.RED,
-			];
-
-			var color:FlxColor = FlxColor.WHITE;
-			for (judge => judgeColor in judgeColors)
-			{
-				if (judge == 'sick' && perfect)
-					judgeColor = FlxColor.fromString('#F8D482'); // golden sicks;
-				if (rating == judge)
-					color = judgeColor;
-			}
-
-			scoreColorTween = FlxTween.color(scoreBar, 0.1, scoreBar.color, color, {
-				onComplete: function(twn:FlxTween)
-				{
-					FlxTween.color(scoreBar, 0.75, scoreBar.color, FlxColor.WHITE);
-					scoreColorTween = null;
-				}
-			});
 		}
 	}
 }

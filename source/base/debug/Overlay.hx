@@ -35,7 +35,7 @@ class Overlay extends TextField
 		autoSize = LEFT;
 		selectable = false;
 
-		defaultTextFormat = new TextFormat(Paths.font("vcr"), 18, -1);
+		defaultTextFormat = new TextFormat(Paths.font("prime"), 18, -1);
 		text = "";
 
 		addEventListener(Event.ENTER_FRAME, update);

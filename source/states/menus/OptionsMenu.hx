@@ -58,23 +58,19 @@ class OptionsMenu extends MusicBeatState
 		categoryMap = [
 			'main' => [
 				[
-					['preferences', callNewGroup],
-					['accessibility', callNewGroup],
-					['appearance', callNewGroup],
-					['metadata', callNewGroup],
+					['gameplay', callNewGroup],
+					['visuals and ui', callNewGroup],
+					['graphics', callNewGroup],
 					['controls', openControls],
-					#if unstableBuild ['note colors', openNotemenu], #end
 				]
 			],
-			'preferences' => [
+			'gameplay' => [
 				[
 					['Gameplay Settings', null],
 
 					['Downscroll', getFromOption],
 					['Centered Receptors', getFromOption],
-					['Hide Opponent Receptors', getFromOption],
 					['Ghost Tapping', getFromOption],
-					['Ghost Miss Animations', getFromOption],
 					['', null],
 
 					['Note Settings', null],
@@ -86,42 +82,19 @@ class OptionsMenu extends MusicBeatState
 					['Sound Settings', null],
 
 					['Hitsound Type', getFromOption],
-					['Hitsound Volume', getFromOption]
-				]
-			],
-			'metadata' => [
-				[
-					['Text Settings', null],
+					['Hitsound Volume', getFromOption],
 
-					['Display Accuracy', getFromOption],
-					['Center Display', getFromOption],
-					['Skip Text', getFromOption],
-					['', null],
-
-					['Meta Settings', null],
-
+					['Miscellaneous Gameplay Settings', null],
+					
+					['Discord Rich Presence', getFromOption],
 					['Auto Pause', getFromOption],
-					['Allow Console Window', getFromOption],
-					#if GAME_UPDATER ['Check for Updates', getFromOption], #end
-					['GPU Rendering', getFromOption],
 					['', null],
-
-					['Debug Settings', null],
-
-					#if !neko ["Framerate Cap", getFromOption], #end
-					['FPS Counter', getFromOption],
-					['Memory Counter', getFromOption],
-					['Debug Info', getFromOption],
-					['Overlay Opacity', getFromOption],
 				]
 			],
-			'appearance' => [
+			'visuals and ui' => [
 				[
 					['User Interface', null],
 
-					["UI Skin", getFromOption],
-					['Colored Health Bar', getFromOption],
-					['Animated Score Color', getFromOption],
 					['Hide User Interface', getFromOption],
 					['', null],
 
@@ -129,26 +102,12 @@ class OptionsMenu extends MusicBeatState
 
 					['Judgement Stacking', getFromOption],
 					['Judgement Recycling', getFromOption],
-					['Fixed Judgements', getFromOption],
-					['Adjust Judgements', openJudgeState],
-					['Counter', getFromOption],
 					['', null],
 
-					['Notes and Holds', null],
-					["Note Skin", getFromOption],
-					["Clip Style", getFromOption],
-					['Arrow Opacity', getFromOption],
-					['Splash Opacity', getFromOption],
-					['Hold Opacity', getFromOption],
-				]
-			],
-			'accessibility' => [
-				[
-					['Graphic Settings', null],
+					['Text Settings', null],
 
-					['Disable Antialiasing', getFromOption],
-					['Disable Flashing Lights', getFromOption],
-					['Disable Shaders', getFromOption],
+					['Display Accuracy', getFromOption],
+					['Skip Text', getFromOption],
 					['', null],
 
 					['Screen Settings', null],
@@ -159,10 +118,23 @@ class OptionsMenu extends MusicBeatState
 					['No Camera Note Movement', getFromOption],
 					['', null],
 
-					['Miscellaneous Settings', null],
-					['Menu Song', getFromOption],
-					['Pause Song', getFromOption],
-					['Discord Rich Presence', getFromOption],
+					['Miscellaneous Visual Settings', null],
+					['FPS Counter', getFromOption],
+					['Memory Counter', getFromOption],
+					['Debug Info', getFromOption],
+					['Overlay Opacity', getFromOption],
+					['', null],
+				]
+			],
+			'graphics' => [
+				[
+					['Graphic Settings', null],
+
+					#if !neko ["Framerate Cap", getFromOption], #end
+					['Disable Antialiasing', getFromOption],
+					['Disable Flashing Lights', getFromOption],
+					['Disable Shaders', getFromOption],
+					['', null],
 				]
 			]
 		];

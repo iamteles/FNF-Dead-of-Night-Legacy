@@ -83,7 +83,7 @@ class Init extends FlxState
 			NOT_FORCED
 		],
 		'Ghost Tapping' => [
-			false,
+			true,
 			Checkmark,
 			"Enables Ghost Tapping, allowing you to press inputs without missing.",
 			NOT_FORCED
@@ -151,9 +151,9 @@ class Init extends FlxState
 			NOT_FORCED
 		],
 		"Framerate Cap" => [120, Selector, 'Define your maximum FPS.', NOT_FORCED, ['']],
-		'FPS Counter' => [true, Checkmark, 'Whether to display the FPS counter.', NOT_FORCED],
+		'FPS Counter' => [false, Checkmark, 'Whether to display the FPS counter.', NOT_FORCED],
 		'Memory Counter' => [
-			true,
+			false,
 			Checkmark,
 			'Whether to display approximately how much memory is being used.',
 			NOT_FORCED
@@ -166,7 +166,7 @@ class Init extends FlxState
 		],
 		'Overlay Opacity' => [50, Selector, "Set the opacity for the FPS Counter overlay.", NOT_FORCED],
 		'Allow Console Window' => [
-			true,
+			false,
 			Checkmark,
 			'Whether to display a console window when F10 is pressed, useful for scripts.',
 			NOT_FORCED
@@ -204,13 +204,13 @@ class Init extends FlxState
 			NOT_FORCED
 		],
 		'Colored Health Bar' => [
-			false,
+			true,
 			Checkmark,
 			"Whether the Health Bar should follow the Character Icon colors.",
 			NOT_FORCED
 		],
 		'Animated Score Color' => [
-			true,
+			false,
 			Checkmark,
 			"Whether the Score Bar should have an Animation for Hitting, based on your current ranking.",
 			NOT_FORCED
@@ -477,12 +477,12 @@ class Init extends FlxState
 					defaultValue = 0;
 				case "Hitsound Volume":
 					defaultValue = 0;
-				case "Arrow Opacity":
-					defaultValue = 80;
-				case "Splash Opacity" | "Overlay Opacity":
+				case "Arrow Opacity" | "Splash Opacity":
+					defaultValue = 100;
+				case "Overlay Opacity":
 					defaultValue = 50;
 				case "Hold Opacity":
-					defaultValue = 60;
+					defaultValue = 70;
 			}
 			if (!Std.isOfType(trueSettings.get(i), Int) || trueSettings.get(i) < 0 || trueSettings.get(i) > 100)
 				trueSettings.set(i, defaultValue);
