@@ -20,7 +20,7 @@ class GameOverSubstate extends MusicBeatSubstate
 	var tankNoise:FlxSound;
 	var confirmNoise:FlxSound;
 
-	public static var character:String = 'bf-dead';
+	public static var character:String = 'bf';
 	public static var deathMusic:String = 'gameOver';
 	public static var deathSound:String = 'fnf_loss_sfx';
 	public static var deathConfirm:String = 'gameOverEnd';
@@ -30,7 +30,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	public static function resetGameOver()
 	{
-		character = 'bf-dead';
+		character = 'bf';
 		deathMusic = 'gameOver';
 		deathSound = 'fnf_loss_sfx';
 		deathConfirm = 'gameOverEnd';
@@ -75,7 +75,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		PlayState.boyfriend.destroy();
 
-		camFollow = new FlxObject(bf.getGraphicMidpoint().x + 20, bf.getGraphicMidpoint().y - 20, 1, 1);
+		camFollow = new FlxObject(bf.getGraphicMidpoint().x + 250, bf.getGraphicMidpoint().y - 100, 1, 1);
 		add(camFollow);
 
 		FlxG.camera.scroll.set();
@@ -103,7 +103,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (bf.animation.curAnim.name == 'firstDeath')
 		{
-			if (bf.animation.curAnim.curFrame == 12)
+			if (bf.animation.curAnim.curFrame == 6)
 			{
 				FlxG.camera.follow(camFollow, LOCKON, 0.01);
 			}

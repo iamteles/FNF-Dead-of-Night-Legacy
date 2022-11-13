@@ -76,7 +76,7 @@ class FreeplayMenu extends MusicBeatState
 		// load week jsons before adding week songs
 		WeekParser.loadJsons(false);
 
-		loadSongs(true);
+		loadSongs(false);
 
 		#if DISCORD_RPC
 		Discord.changePresence('CHOOSING A SONG', 'Freeplay Menu');

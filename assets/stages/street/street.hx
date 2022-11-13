@@ -12,10 +12,19 @@ function generateStage()
 
 function repositionPlayers(boyfriend:Character, gf:Character, dad:Character)
 {
+    if(PlayState.SONG.player2.toLowerCase() == "a")
+    {
+		dad.x -= 820;
+		dad.y -= 90;
+    }
+    else
+    {
+		dad.x -= 720;
+		dad.y -= 90;
+    }
+        
 	//boyfriend.x += 200;
     boyfriend.y -= 120;
-    dad.x -= 220;
-    dad.y += 190;
     //gf.x += 200;
     gf.y -= 140;
 }

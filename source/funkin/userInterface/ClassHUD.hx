@@ -45,9 +45,26 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 	private final barEnemy = FlxColor.fromRGB(PlayState.dad.characterData.barColor[0], PlayState.dad.characterData.barColor[1],
 		PlayState.dad.characterData.barColor[2]);
 
+	var vgblack:FlxSprite;
+
 	public function new()
 	{
 		super();
+
+		vgblack = new FlxSprite().loadGraphic(Paths.image('UI/black-vignette'));
+		add(vgblack);
+
+		switch(PlayState.SONG.song.toLowerCase())
+		{
+			case "hushed":
+				vgblack.alpha = 0.4;
+			case "forewarn":
+				vgblack.alpha = 0.7;
+			case "downward-spiral":
+				vgblack.alpha = 1;
+			default:
+				vgblack.alpha = 0;
+		}
 
 		// le healthbar setup
 		var barY = FlxG.height * 0.875;

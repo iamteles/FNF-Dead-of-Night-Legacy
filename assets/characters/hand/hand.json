@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-540,
+				-384
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Plush Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-547,
+				-381
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Plush squeeze",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-547,
+				-381
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Plush squeeze",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-547,
+				-381
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Plush squeeze",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-547,
+				-381
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Plush squeeze",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/plush hand",
+	"position": [
+		-260,
+		0
+	],
+	"healthicon": "plush",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		255,
+		255
+	],
+	"camera_position": [
+		380,
+		400
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

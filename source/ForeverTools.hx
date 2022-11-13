@@ -294,7 +294,7 @@ class ForeverTools
 			case "transparent":
 				FlxColor.TRANSPARENT;
 		}
-		return FlxColor.WHITE;
+		return FlxColor.BLACK;
 	}
 
 	public static function getPoint(point:String):FlxAxes

@@ -170,4 +170,13 @@ class CoolUtil
 
 		return if (directory != null) directory else [];
 	}
+	public static function cameraLerp(a:Float):Float
+	{
+		return FlxG.elapsed / 0.016666666666666666 * a;
+	}
+
+	public static function utilityLerp(a:Float, b:Float, c:Float):Float
+	{
+		return a + CoolUtil.cameraLerp(c) * (b - a);
+	}
 }

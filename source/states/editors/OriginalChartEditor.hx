@@ -84,6 +84,9 @@ class OriginalChartEditor extends MusicBeatState
 	// event name - desciption
 	var eventArray:Array<Dynamic> = [
 		["", ""],
+		["Change Camera Config", "Changes the configurations for the Camera Beats\nValue 1: Speed of the Camera Beats\n Value 2: Zoom of the Camera"],
+		["Change Zoom", "Changes the defaultCamZoom\n Value 1: defaultCamZoom"],
+		["Change Phase", "Changes the idle suffix/phase\n Value 1: New Suffix"],
 		[
 			"Hey!",
 			"Plays the \"Hey!\" animation from Bopeebo,\nValue 1: Character (bf, gf, dad, defaults to bf).\nValue 2: Custom animation duration,\nleave it blank for 0.6s"

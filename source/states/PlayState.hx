@@ -37,8 +37,11 @@ import funkin.userInterface.*;
 import lime.app.Application;
 import openfl.display.BlendMode;
 import openfl.display.GraphicsShader;
+import openfl.display.Shader;
 import openfl.events.KeyboardEvent;
+import openfl.filters.BitmapFilter;
 import openfl.filters.ShaderFilter;
+import shaders.*;
 import states.editors.*;
 import states.menus.*;
 import states.substates.*;
@@ -109,6 +112,9 @@ class PlayState extends MusicBeatState
 	// girlfriend's headbop speed;
 	public var gfSpeed:Int = 1;
 
+	//var filters:Array<BitmapFilter> = [];
+	//var camfilters:Array<BitmapFilter> = [];
+
 	// timer for countdown ticks;
 	public static var startTimer:FlxTimer;
 
@@ -135,7 +141,7 @@ class PlayState extends MusicBeatState
 	public var camDisplaceY:Float = 0; // might not use depending on result
 
 	public static var externalCamX:Float = 0; // I HATE FRIDAY NIGHT FUNKIN
-	public var externalCamY:Float = 0; 
+	public static var externalCamY:Float = 0; 
 
 	public static var cameraSpeed:Float = 1;
 	public static var defaultCamZoom:Float = 1.05;
@@ -239,6 +245,9 @@ class PlayState extends MusicBeatState
 
 		assetModifier = 'base';
 		uiModifier = 'default';
+
+		externalCamX = 0;
+		externalCamY = 0;
 	}
 
 	/**
@@ -484,7 +493,15 @@ class PlayState extends MusicBeatState
 
 		FlxG.cameras.setDefaultDrawTarget(camGame, true);
 
+		/*
+		camGame.setFilters(filters);
+		camGame.filtersEnabled = true;
+		camHUD.setFilters(camfilters);
+		camHUD.filtersEnabled = true;
+		*/
+
 		// default song
+
 		if (SONG == null)
 			SONG = Song.loadSong('test', 'test');
 
@@ -645,6 +662,23 @@ class PlayState extends MusicBeatState
 		dialogueHUD.bgColor.alpha = 0;
 		FlxG.cameras.add(dialogueHUD, false);
 
+
+		/* -- maybe redo this later, will keep as png for now
+		filters.push(Shaders.vignette);
+
+		switch(SONG.song.toLowerCase())
+		{
+			case 'hushed':
+				Shaders.setVignette(2);
+			case 'forewarn':
+				Shaders.setVignette(3);
+			case 'downward-spiral':
+				Shaders.setVignette(4);
+			default:
+				Shaders.setVignette(0);
+		}
+		*/
+
 		keysArray = [
 			copyKey(Init.gameControls.get('LEFT')[0]),
 			copyKey(Init.gameControls.get('DOWN')[0]),
@@ -664,6 +698,8 @@ class PlayState extends MusicBeatState
 			songCutscene();
 		else
 			startCountdown();
+
+
 
 		callFunc('postCreate', []);
 	}
@@ -1953,7 +1989,6 @@ class PlayState extends MusicBeatState
 					hud.zoom += 0.05 + beatZoom;
 			}
 		}
-
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
 		{
 			if (SONG.notes[Math.floor(curStep / 16)].changeBPM)
@@ -2051,6 +2086,14 @@ class PlayState extends MusicBeatState
 		/* NOTE: unhardcode this later */
 		switch (event)
 		{
+			case 'Change Camera Config':
+				beatSpeed = Std.parseFloat(value1);
+				beatZoom = Std.parseFloat(value2);
+			case 'Change Zoom':
+				defaultCamZoom = Std.parseFloat(value1);
+			case 'Change Phase':
+				dad.idleSuffix = value1;
+				
 			case 'Set GF Speed':
 				var speed:Int = Std.parseInt(value1);
 				if (Math.isNaN(speed) || speed <= 0)
@@ -2110,7 +2153,7 @@ class PlayState extends MusicBeatState
 					timer = 0.6;
 				if (value1 == null)
 					value1 = 'white';
-				FlxG.camera.flash(ForeverTools.returnColor('$value1'), timer);
+				FlxG.camera.flash(FlxColor.WHITE, timer);
 			case 'Hey!':
 				var timer:Float = Std.parseFloat(value2);
 				if (Math.isNaN(timer) || timer <= 0)
