@@ -1,0 +1,155 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				105,
+				249
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "AbiIdle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				157,
+				248
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "AbiRight",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-1,
+				212
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "AbiDown",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				107,
+				277
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "AbiUp",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				46,
+				255
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "AbiLeft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				155,
+				251
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "Abi missRIGHT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1,
+				225
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "Abi missDOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				114,
+				280
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "Abi missUP",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				52,
+				256
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "Abi missLEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				169,
+				242
+			],
+			"anim": "firstDeath",
+			"fps": 24,
+			"name": "Abi dies",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				165,
+				54
+			],
+			"anim": "deathLoop",
+			"fps": 24,
+			"name": "Abi deathloop",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				202,
+				147
+			],
+			"anim": "deathConfirm",
+			"fps": 24,
+			"name": "Abi deathCONFIRM",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Conscious Abi",
+	"position": [
+		-130,
+		370
+	],
+	"healthicon": "abi",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		255,
+		140
+	],
+	"camera_position": [
+		-140,
+		-240
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

@@ -303,7 +303,7 @@ class PlayState extends MusicBeatState
 
 	function doTweenCheck(isDad:Bool = false):Bool
 	{
-		if (isDad && Init.getSetting('Centered Receptors'))
+		if (isDad && Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "conscious")
 			return false;
 		if (skipCountdown)
 			return false;
@@ -426,7 +426,7 @@ class PlayState extends MusicBeatState
 			}
 
 			// for the opponent
-			if (!Init.getSetting('Centered Receptors'))
+			if (!Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "conscious")
 			{
 				var lineColorP2 = 0xFFFF0000;
 
@@ -590,7 +590,13 @@ class PlayState extends MusicBeatState
 		startedCountdown = true;
 
 		// initialize ui elements
-		var bfPlacement:Float = FlxG.width / 2 + (!Init.getSetting('Centered Receptors') ? FlxG.width / 4 : 0);
+		var isMScroll:Bool = false;
+
+		if (Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "conscious")
+		{
+			isMScroll = true;
+		}
+		var bfPlacement:Float = FlxG.width / 2 + (!isMScroll ? FlxG.width / 4 : 0);
 		var dadPlacement:Float = (FlxG.width / 2) - FlxG.width / 4;
 
 		var downscroll = Init.getSetting('Downscroll');
@@ -623,7 +629,7 @@ class PlayState extends MusicBeatState
 			strumLines.members[i].allNotes.cameras = [strumHUD[i]];
 		}
 
-		if (Init.getSetting('Centered Receptors'))
+		if (Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "conscious")
 		{
 			for (i in 0...PlayState.dadStrums.members.length)
 			{
@@ -662,22 +668,11 @@ class PlayState extends MusicBeatState
 		dialogueHUD.bgColor.alpha = 0;
 		FlxG.cameras.add(dialogueHUD, false);
 
-
-		/* -- maybe redo this later, will keep as png for now
-		filters.push(Shaders.vignette);
-
 		switch(SONG.song.toLowerCase())
 		{
-			case 'hushed':
-				Shaders.setVignette(2);
-			case 'forewarn':
-				Shaders.setVignette(3);
-			case 'downward-spiral':
-				Shaders.setVignette(4);
-			default:
-				Shaders.setVignette(0);
+			case 'conscious':
+				PlayState.defaultCamZoom = 0.8;
 		}
-		*/
 
 		keysArray = [
 			copyKey(Init.gameControls.get('LEFT')[0]),
@@ -731,7 +726,13 @@ class PlayState extends MusicBeatState
 			if (endingSong)
 				endSong();
 			else
-				callTextbox();
+			{
+				new FlxTimer().start(0.5, function(tmr:FlxTimer)
+				{
+					callTextbox();
+				});
+			}
+
 			return;
 		}
 		#else
@@ -1061,11 +1062,11 @@ class PlayState extends MusicBeatState
 					var getCenterX = char.getMidpoint().x + 100;
 					var getCenterY = char.getMidpoint().y - 100;
 
-					camFollow.setPosition(getCenterX + camDisplaceX + char.characterData.camOffsetX + externalCamX,
-						getCenterY + camDisplaceY + char.characterData.camOffsetY + externalCamY);
+					camFollow.setPosition(getCenterX + camDisplaceX + char.characterData.camOffsetX + char.characterData.psychCamOffset[0] + externalCamX,
+						getCenterY + camDisplaceY + char.characterData.camOffsetY + char.characterData.psychCamOffset[1] + externalCamY);
 
-					if (char.curCharacter == 'mom')
-						Conductor.songVocals.volume = 1;
+					if (char.curCharacter == 'a-c')
+						forceZoom = [0, 0, 0, 0];
 				}
 				else if (mustHit && !gfSection)
 				{
@@ -1075,20 +1076,12 @@ class PlayState extends MusicBeatState
 					var getCenterY = char.getMidpoint().y - 100;
 					switch (curStage)
 					{
-						case 'limo':
-							getCenterX = char.getMidpoint().x - 300;
-						case 'mall':
-							getCenterY = char.getMidpoint().y - 200;
-						case 'school':
-							getCenterX = char.getMidpoint().x - 200;
-							getCenterY = char.getMidpoint().y - 200;
-						case 'schoolEvil':
-							getCenterX = char.getMidpoint().x - 200;
-							getCenterY = char.getMidpoint().y - 200;
+						case 'hill':
+							forceZoom = [0.2, 0, 0, 0];
 					}
 
-					camFollow.setPosition(getCenterX + camDisplaceX - char.characterData.camOffsetX,
-						getCenterY + camDisplaceY + char.characterData.camOffsetY);
+					camFollow.setPosition(getCenterX + camDisplaceX - char.characterData.camOffsetX + char.characterData.psychCamOffset[0],
+						getCenterY + camDisplaceY + char.characterData.camOffsetY + char.characterData.psychCamOffset[1]);
 				}
 				else if (gfSection && !mustHit || gfSection && mustHit)
 				{
@@ -2390,6 +2383,8 @@ class PlayState extends MusicBeatState
 		{
 			switch (SONG.song.toLowerCase())
 			{
+				case 'downward-spiral':
+					playVideo('cutscene');
 				default:
 					if (comboHUD.visible) // bandaid fix;
 						callTextbox();
@@ -2455,7 +2450,7 @@ class PlayState extends MusicBeatState
 	function startCountdown():Void
 	{
 		inCutscene = false;
-
+		
 		Conductor.songPosition = -(Conductor.crochet * 5);
 		swagCounter = 0;
 
@@ -2476,7 +2471,7 @@ class PlayState extends MusicBeatState
 				FlxTween.tween(darknessLine2, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
 			}
 
-			if (!Init.getSetting('Centered Receptors'))
+			if (!Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "conscious")
 			{
 				darknessOpponent.x = dadStrums.receptors.members[0].x + 20;
 				darknessLine3.x = darknessOpponent.x - 5;

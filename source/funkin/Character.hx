@@ -41,6 +41,7 @@ typedef CharacterData =
 	var antialiasing:Bool;
 	var quickDancer:Bool;
 	var barColor:Array<Float>;
+	var psychCamOffset:Array<Float>;
 }
 
 class Character extends FNFSprite
@@ -99,6 +100,7 @@ class Character extends FNFSprite
 			quickDancer: false,
 			noteSkin: "NOTE_assets",
 			antialiasing: !character.endsWith('-pixel'),
+			psychCamOffset: [0, 0],
 			barColor: [161, 161, 161]
 		};
 
@@ -630,8 +632,7 @@ class Character extends FNFSprite
 
 		characterData.offsetX = json.position[0];
 		characterData.offsetY = json.position[1];
-		characterData.camOffsetX = json.camera_position[0];
-		characterData.camOffsetY = json.camera_position[1];
+		characterData.psychCamOffset = json.camera_position;
 	}
 
 	function generatePlaceholder()

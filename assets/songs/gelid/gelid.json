@@ -1,8 +1,8 @@
 {
 	"song": {
-		"player1": "FITDON BF",
+		"player1": "bf",
 		"events": [],
-		"gfVersion": "Fitdon GF",
+		"gfVersion": "gf",
 		"player2": "Abi",
 		"notes": [
 			{
@@ -7040,7 +7040,7 @@
 		"song": "gelid",
 		"validScore": true,
 		"arrowSkin": "",
-		"stage": "stage",
+		"stage": "street",
 		"needsVoices": true,
 		"speed": 3,
 		"bpm": 185
