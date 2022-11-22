@@ -1,0 +1,155 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-528,
+				90
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "A Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-237,
+				300
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "A Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-379,
+				-159
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "A Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-250,
+				176
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "A Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-548,
+				101
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "A Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-591,
+				-278
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 24,
+			"name": "A altRIGHT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-528,
+				-332
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "A altDOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-366,
+				-265
+			],
+			"anim": "singLEFT-alt",
+			"fps": 24,
+			"name": "A altLEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-510,
+				-196
+			],
+			"anim": "singUP-alt",
+			"fps": 24,
+			"name": "A altUP",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-359,
+				94
+			],
+			"anim": "transformation",
+			"fps": 24,
+			"name": "A shift",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-380,
+				0
+			],
+			"anim": "turn back",
+			"fps": 24,
+			"name": "A Revert",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-534,
+				-273
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle-alt",
+			"loop": false,
+			"name": "A altIDLE"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/A",
+	"position": [
+		-500,
+		0
+	],
+	"healthicon": "a",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		0,
+		0
+	],
+	"camera_position": [
+		350,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

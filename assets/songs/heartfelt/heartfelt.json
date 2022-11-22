@@ -1,6 +1,6 @@
 {
 	"song": {
-		"player1": "Heartfelt Abi",
+		"player1": "abi-hf",
 		"notes": [
 			{
 				"sectionNotes": [],
@@ -3989,8 +3989,8 @@
 				"mustHitSection": true
 			}
 		],
-		"player2": "cat plush",
-		"gfVersion": "GF Body",
+		"player2": "hand",
+		"gfVersion": "gf",
 		"events": [
 			[
 				78673.469387755,
@@ -4036,7 +4036,7 @@
 		"player3": null,
 		"song": "heartfelt",
 		"needsVoices": true,
-		"stage": "stage",
+		"stage": "stairs",
 		"arrowSkin": "",
 		"validScore": true,
 		"bpm": 98,

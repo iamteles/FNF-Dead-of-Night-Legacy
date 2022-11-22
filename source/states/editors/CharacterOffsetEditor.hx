@@ -493,7 +493,7 @@ class CharacterOffsetEditor extends MusicBeatState
 					characterErrorFormat = 'ERROR! No animations found on Script
 					\nmake sure the offsets exist on said script
 					\nTry: addOffset(\'animationName\', xPosition, yPosition);';
-				case PSYCH_ENGINE | SUPER_ENGINE | FUNKIN_COCOA:
+				case PSYCH_ENGINE | SUPER_ENGINE | FUNKIN_COCOA | ATLAS:
 					characterErrorFormat = 'ERROR! No animations found';
 			}
 

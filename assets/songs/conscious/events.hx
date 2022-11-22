@@ -15,5 +15,7 @@ function stepHit(curStep:Int)
 			PlayState.defaultCamZoom = 0.4;
 		case 320:
 			FlxG.camera.fade(ForeverTools.returnColor('black'), 0.5, true);
+		case 1920:
+			FlxG.camera.fade(ForeverTools.returnColor('black'), 1, false);
 	}
 }

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="plush hand.png">
+	<!-- Created with Adobe Animate version 22.0.8.217 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Plush Idle0000" x="0" y="0" width="165" height="253" pivotX="10" pivotY="0" frameX="0" frameY="-12" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0001" x="0" y="0" width="165" height="253" frameX="0" frameY="-12" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0002" x="165" y="0" width="161" height="260" frameX="-2" frameY="-8" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0003" x="165" y="0" width="161" height="260" frameX="-2" frameY="-8" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0004" x="326" y="0" width="153" height="270" frameX="-6" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0005" x="326" y="0" width="153" height="270" frameX="-6" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0006" x="479" y="0" width="147" height="275" frameX="-9" frameY="-1" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0007" x="479" y="0" width="147" height="275" frameX="-9" frameY="-1" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0008" x="626" y="0" width="145" height="277" frameX="-10" frameY="0" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0009" x="626" y="0" width="145" height="277" frameX="-10" frameY="0" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0010" x="626" y="0" width="145" height="277" frameX="-10" frameY="0" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0011" x="626" y="0" width="145" height="277" frameX="-10" frameY="0" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0012" x="626" y="0" width="145" height="277" frameX="-10" frameY="0" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0013" x="626" y="0" width="145" height="277" frameX="-10" frameY="0" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush Idle0014" x="626" y="0" width="145" height="277" frameX="-10" frameY="0" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0000" x="771" y="0" width="111" height="290" pivotX="2.05" pivotY="3.9" frameX="-17" frameY="-7" frameWidth="149" frameHeight="297"/>
+	<SubTexture name="Plush squeeze0001" x="771" y="0" width="111" height="290" frameX="-17" frameY="-7" frameWidth="149" frameHeight="297"/>
+	<SubTexture name="Plush squeeze0002" x="771" y="0" width="111" height="290" frameX="-17" frameY="-7" frameWidth="149" frameHeight="297"/>
+	<SubTexture name="Plush squeeze0003" x="882" y="0" width="149" height="285" frameX="0" frameY="0" frameWidth="149" frameHeight="297"/>
+	<SubTexture name="Plush squeeze0004" x="882" y="0" width="149" height="285" frameX="0" frameY="0" frameWidth="149" frameHeight="297"/>
+	<SubTexture name="Plush squeeze0005" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0006" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0007" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0008" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0009" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0010" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0011" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0012" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0013" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0014" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0015" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0016" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0017" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0018" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0019" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0020" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0021" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0022" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0023" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+	<SubTexture name="Plush squeeze0024" x="626" y="0" width="145" height="277" frameX="-2" frameY="-3" frameWidth="165" frameHeight="277"/>
+</TextureAtlas>

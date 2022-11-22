@@ -1,0 +1,166 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-5,
+				90
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "Boyfriend Idle"
+		},
+		{
+			"offsets": [
+				-12,
+				94
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Boyfriend Left"
+		},
+		{
+			"offsets": [
+				-20,
+				134
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "Boyfriend Down"
+		},
+		{
+			"offsets": [
+				-83,
+				179
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "Boyfriend Up"
+		},
+		{
+			"offsets": [
+				-68,
+				117
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Boyfriend Right"
+		},
+		{
+			"offsets": [
+				-23,
+				102
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"loop": false,
+			"name": "Boyfriend MISSleft"
+		},
+		{
+			"offsets": [
+				-25,
+				135
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"loop": false,
+			"name": "Boyfriend MISSdown"
+		},
+		{
+			"offsets": [
+				-101,
+				180
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUPmiss",
+			"loop": false,
+			"name": "Boyfriend MISSup"
+		},
+		{
+			"offsets": [
+				-79,
+				116
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"loop": false,
+			"name": "Boyfriend MISSright"
+		},
+		{
+			"offsets": [
+				-43,
+				111
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "hey",
+			"loop": false,
+			"name": "Boyfriend Hey"
+		},
+		{
+			"offsets": [
+				174,
+				414
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "firstDeath",
+			"loop": false,
+			"name": "Boyfriend firstDEATH"
+		},
+		{
+			"offsets": [
+				18,
+				-16
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "deathLoop",
+			"loop": true,
+			"name": "Boyfriend DEATHloop"
+		},
+		{
+			"offsets": [
+				85,
+				78
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "deathConfirm",
+			"loop": false,
+			"name": "Boyfriend DEATHconfirm"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Fitdon BF",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		49,
+		176,
+		209
+	],
+	"camera_position": [
+		390,
+		-80
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

@@ -20,7 +20,7 @@ class GameOverSubstate extends MusicBeatSubstate
 	var tankNoise:FlxSound;
 	var confirmNoise:FlxSound;
 
-	public static var character:String = 'bf';
+	public static var character:String = 'bf-dead';
 	public static var deathMusic:String = 'gameOver';
 	public static var deathSound:String = 'fnf_loss_sfx';
 	public static var deathConfirm:String = 'gameOverEnd';
@@ -30,7 +30,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	public static function resetGameOver()
 	{
-		character = 'bf';
+		character = 'bf-dead';
 		deathMusic = 'gameOver';
 		deathSound = 'fnf_loss_sfx';
 		deathConfirm = 'gameOverEnd';

@@ -3,6 +3,89 @@
 	"bgAntialiasing": true,
 	"users": [
 		{
+			"sectionName": "FRIDAY NIGHT FUNKIN: DEAD OF NIGHT",
+			"name": "Cocopuffs",
+			"icon": "fitdon/cocopuffs",
+			"textData": [
+				"Director of Funkin: Dead of Night & Main Composer",
+				"Love is in the air!\nWrong. Gas leak!"
+			],
+			"urlData": {
+				"Twitter": "https://twitter.com/file_corruption"
+			},
+			"colors": [
+				165,
+				165,
+				165
+			]
+		},
+		{
+			"name": "Teles",
+			"icon": "underscore/teles",
+			"textData": [
+				"Main Coder for Funkin: Dead of Night"
+			],
+			"urlData": {
+				"Twitter": "https://twitter.com/itzteles_aa"
+			},
+			"colors": [
+				253,
+				131,
+				58
+			]
+		},
+		{
+			"sectionName": "FRIDAY NIGHT FUNKIN: DEAD OF NIGHT",
+			"name": "CharaWhy",
+			"icon": "fitdon/charawhy",
+			"textData": [
+				"Additional Composer for Funkin: Dead of Night",
+				"Lets get real here. \nI am probably the only Estonian \nin this community that says 'balls' \non repeat like a broken record\n And if you are Estonian by any miracle \nKäi putsi :D"
+			],
+			"urlData": {
+				"Twitter": "https://twitter.com/CharaWhyy"
+			},
+			"colors": [
+				125,
+				83,
+				235
+			]
+		},
+		{
+			"sectionName": "FRIDAY NIGHT FUNKIN: DEAD OF NIGHT",
+			"name": "DiamonDiglett42",
+			"icon": "fitdon/diamondiglett",
+			"textData": [
+				"Main Charter of Funkin: Dead of Night",
+				"I’m the fastest charter \nout of everyone in the team."
+			],
+			"urlData": {
+				"Twitter": "https://twitter.com/DiamonDiglett42"
+			},
+			"colors": [
+				91,
+				226,
+				96
+			]
+		},
+		{
+			"sectionName": "FRIDAY NIGHT FUNKIN: DEAD OF NIGHT",
+			"name": "YaBoiJustin",
+			"icon": "fitdon/yaboijustin",
+			"textData": [
+				"Additional charter for Funkin: Dead of Night",
+				"hey guys, \nit's me awesome."
+			],
+			"urlData": {
+				"Twitter": "https://twitter.com/YaBoiJustinGG"
+			},
+			"colors": [
+				68,
+				213,
+				94
+			]
+		},
+		{
 			"sectionName": "FOREVER ENGINE: UNDERSCORE",
 			"name": "BeastlyGhost",
 			"icon": "underscore/ghost",

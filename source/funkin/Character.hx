@@ -4,6 +4,7 @@ package funkin;
 	The character class initialises any and all characters that exist within gameplay. For now, the character class will
 	stay the same as it was in the original source of the game. I'll most likely make some changes afterwards though!
 **/
+import animateatlas.AtlasFrameMaker;
 import base.*;
 import base.SongLoader.LegacySection;
 import base.SongLoader.Song;
@@ -27,6 +28,7 @@ enum abstract CharacterOrigin(String) to String
 	var PSYCH_ENGINE;
 	var SUPER_ENGINE;
 	var FUNKIN_COCOA;
+	var ATLAS;
 }
 
 typedef CharacterData =
@@ -114,16 +116,23 @@ class Character extends FNFSprite
 
 		if (ForeverTools.fileExists('characters/$character/' + character + '.json'))
 			characterType = PSYCH_ENGINE;
+		else if (ForeverTools.fileExists('characters/$character/' + 'spritemap.json'))
+			characterType = ATLAS;
 
 		switch (character)
 		{
 			default:
 				try
 				{
-					if (characterType == PSYCH_ENGINE)
-						generatePsychChar(character);
-					else
-						generateBaseChar(character);
+					switch (characterType)
+					{
+						case PSYCH_ENGINE:
+							generatePsychChar(character);
+						case ATLAS:
+							generateAtlas(character);
+						default:
+							generateBaseChar(character);
+					}
 				}
 				catch (e)
 				{
@@ -669,5 +678,11 @@ class Character extends FNFSprite
 		characterData.barColor = [161, 161, 161];
 		characterData.offsetY = 350;
 		curCharacter = 'placeholder';
+	}
+
+	function generateAtlas(char:String = 'bf')
+	{
+		frames = AtlasFrameMaker.construct('characters/$char/', []);
+		playAnim('idle');
 	}
 }

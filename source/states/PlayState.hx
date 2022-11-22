@@ -342,8 +342,15 @@ class PlayState extends MusicBeatState
 
 		add(stageBuild.layers);
 
-		add(dad);
-		add(boyfriend);
+		if(SONG.song.toLowerCase() == 'heartfelt') {
+			add(boyfriend);
+			add(dad);
+		}
+		else {
+			add(dad);
+			add(boyfriend);
+		}
+
 		add(stageBuild.foreground);
 
 		// force them to dance
@@ -2085,8 +2092,19 @@ class PlayState extends MusicBeatState
 			case 'Change Zoom':
 				defaultCamZoom = Std.parseFloat(value1);
 			case 'Change Phase':
-				dad.idleSuffix = value1;
-				
+				if (value2 == null || value2.length < 1)
+					value2 == 'dad';
+
+				switch (value2.toLowerCase().trim())
+				{
+					case 'bf' | 'boyfriend' | 'player' | '0':
+						boyfriend.idleSuffix = value1;
+					case 'gf' | 'girlfriend' | 'spectator' | '2':
+						gf.idleSuffix = value1;
+					case 'dad' | 'dadOpponent' | 'opponent' | '1':
+						dad.idleSuffix = value1;
+				}
+			
 			case 'Set GF Speed':
 				var speed:Int = Std.parseInt(value1);
 				if (Math.isNaN(speed) || speed <= 0)

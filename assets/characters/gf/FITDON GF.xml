@@ -1,84 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="FITDON GF.png">
-	<!-- Created with Adobe Animate version 22.0.8.217 -->
+<TextureAtlas imagePath="FITDON_GF.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Girlfriend Cry0000" x="0" y="0" width="546" height="657" pivotX="-238.3" pivotY="-10.15" frameX="0" frameY="-4" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0001" x="0" y="0" width="546" height="657" frameX="0" frameY="-4" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0002" x="546" y="0" width="534" height="661" frameX="-9" frameY="0" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0003" x="546" y="0" width="534" height="661" frameX="-9" frameY="0" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0004" x="1080" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0005" x="1080" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0006" x="1616" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0007" x="1616" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0008" x="1080" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0009" x="1080" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0010" x="1616" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0011" x="1616" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0012" x="1080" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0013" x="1080" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0014" x="1616" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0015" x="1616" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0016" x="1080" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0017" x="1080" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0018" x="1616" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0019" x="1616" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0020" x="1080" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0021" x="1080" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0022" x="1616" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Cry0023" x="1616" y="0" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
-	<SubTexture name="Girlfriend Dancing Beat0000" x="2152" y="0" width="571" height="647" pivotX="-213.6" pivotY="2.1" frameX="0" frameY="-26" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0001" x="2152" y="0" width="571" height="647" frameX="0" frameY="-26" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0002" x="2723" y="0" width="571" height="650" frameX="0" frameY="-23" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0003" x="3294" y="0" width="571" height="650" frameX="0" frameY="-23" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0004" x="0" y="661" width="571" height="654" frameX="0" frameY="-19" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0005" x="571" y="661" width="548" height="654" frameX="-22" frameY="-19" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0006" x="1119" y="661" width="548" height="658" frameX="-22" frameY="-15" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0007" x="1667" y="661" width="552" height="666" frameX="-25" frameY="-7" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0008" x="1667" y="661" width="552" height="666" frameX="-25" frameY="-7" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0009" x="2219" y="661" width="567" height="666" frameX="-21" frameY="-7" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0010" x="2786" y="661" width="567" height="671" frameX="-21" frameY="-2" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0011" x="3353" y="661" width="574" height="671" frameX="-19" frameY="-2" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0012" x="3353" y="661" width="574" height="671" frameX="-19" frameY="-2" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0013" x="0" y="1332" width="576" height="673" frameX="-18" frameY="0" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0014" x="0" y="1332" width="576" height="673" frameX="-18" frameY="0" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0015" x="576" y="1332" width="583" height="647" frameX="-45" frameY="-26" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0016" x="576" y="1332" width="583" height="647" frameX="-45" frameY="-26" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0017" x="1159" y="1332" width="583" height="643" frameX="-45" frameY="-30" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0018" x="1742" y="1332" width="583" height="643" frameX="-45" frameY="-30" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0019" x="2325" y="1332" width="583" height="649" frameX="-45" frameY="-24" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0020" x="2908" y="1332" width="553" height="649" frameX="-34" frameY="-24" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0021" x="3461" y="1332" width="553" height="664" frameX="-34" frameY="-9" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0022" x="0" y="2005" width="548" height="669" frameX="-31" frameY="-4" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0023" x="0" y="2005" width="548" height="669" frameX="-31" frameY="-4" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0024" x="548" y="2005" width="562" height="669" frameX="-22" frameY="-4" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0025" x="1110" y="2005" width="562" height="672" frameX="-22" frameY="-1" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0026" x="1672" y="2005" width="573" height="672" frameX="-19" frameY="-1" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0027" x="1672" y="2005" width="573" height="672" frameX="-19" frameY="-1" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0028" x="0" y="1332" width="576" height="673" frameX="-18" frameY="0" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Dancing Beat0029" x="0" y="1332" width="576" height="673" frameX="-18" frameY="0" frameWidth="628" frameHeight="673"/>
-	<SubTexture name="Girlfriend Hey0000" x="2245" y="2005" width="552" height="682" pivotX="-252.7" pivotY="11.05" frameX="-6" frameY="0" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0001" x="2245" y="2005" width="552" height="682" frameX="-6" frameY="0" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0002" x="2797" y="2005" width="554" height="673" frameX="0" frameY="-9" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0003" x="2797" y="2005" width="554" height="673" frameX="0" frameY="-9" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0004" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0005" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0006" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0007" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0008" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0009" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0010" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0011" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0012" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0013" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0014" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0015" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0016" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0017" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0018" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0019" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0020" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0021" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0022" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0023" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
-	<SubTexture name="Girlfriend Hey0024" x="3351" y="2005" width="553" height="675" frameX="-2" frameY="-7" frameWidth="558" frameHeight="682"/>
+	<SubTexture name="Girlfriend Cry0000" x="9" y="9" width="546" height="657" frameX="0" frameY="-4" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0001" x="9" y="9" width="546" height="657" frameX="0" frameY="-4" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0002" x="571" y="9" width="534" height="661" frameX="-9" frameY="0" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0003" x="571" y="9" width="534" height="661" frameX="-9" frameY="0" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0004" x="1121" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0005" x="1121" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0006" x="1673" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0007" x="1673" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0008" x="1121" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0009" x="1121" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0010" x="1673" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0011" x="1673" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0012" x="1121" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0013" x="1121" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0014" x="1673" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0015" x="1673" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0016" x="1121" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0017" x="1121" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0018" x="1673" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0019" x="1673" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0020" x="1121" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0021" x="1121" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0022" x="1673" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Cry0023" x="1673" y="9" width="536" height="659" frameX="-8" frameY="-2" frameWidth="546" frameHeight="661"/>
+	<SubTexture name="Girlfriend Dancing Beat0000" x="2225" y="9" width="571" height="647" frameX="0" frameY="-26" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0001" x="2225" y="9" width="571" height="647" frameX="0" frameY="-26" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0002" x="9" y="686" width="571" height="650" frameX="0" frameY="-23" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0003" x="596" y="686" width="571" height="650" frameX="0" frameY="-23" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0004" x="1183" y="686" width="571" height="654" frameX="0" frameY="-19" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0005" x="1770" y="686" width="548" height="654" frameX="-22" frameY="-19" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0006" x="2334" y="686" width="548" height="658" frameX="-22" frameY="-15" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0007" x="9" y="1360" width="552" height="666" frameX="-25" frameY="-7" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0008" x="9" y="1360" width="552" height="666" frameX="-25" frameY="-7" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0009" x="577" y="1360" width="567" height="666" frameX="-21" frameY="-7" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0010" x="1160" y="1360" width="567" height="671" frameX="-21" frameY="-2" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0011" x="1743" y="1360" width="574" height="671" frameX="-19" frameY="-2" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0012" x="1743" y="1360" width="574" height="671" frameX="-19" frameY="-2" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0013" x="2333" y="1360" width="576" height="673" frameX="-18" frameY="0" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0014" x="2333" y="1360" width="576" height="673" frameX="-18" frameY="0" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0015" x="9" y="2049" width="583" height="647" frameX="-45" frameY="-26" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0016" x="9" y="2049" width="583" height="647" frameX="-45" frameY="-26" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0017" x="608" y="2049" width="583" height="643" frameX="-45" frameY="-30" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0018" x="1207" y="2049" width="583" height="643" frameX="-45" frameY="-30" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0019" x="1806" y="2049" width="583" height="649" frameX="-45" frameY="-24" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0020" x="2405" y="2049" width="553" height="649" frameX="-34" frameY="-24" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0021" x="9" y="2714" width="553" height="664" frameX="-34" frameY="-9" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0022" x="578" y="2714" width="548" height="669" frameX="-31" frameY="-4" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0023" x="578" y="2714" width="548" height="669" frameX="-31" frameY="-4" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0024" x="1142" y="2714" width="562" height="669" frameX="-22" frameY="-4" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0025" x="1720" y="2714" width="562" height="672" frameX="-22" frameY="-1" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0026" x="2298" y="2714" width="573" height="672" frameX="-19" frameY="-1" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0027" x="2298" y="2714" width="573" height="672" frameX="-19" frameY="-1" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0028" x="2333" y="1360" width="576" height="673" frameX="-18" frameY="0" frameWidth="628" frameHeight="673"/>
+	<SubTexture name="Girlfriend Dancing Beat0029" x="2333" y="1360" width="576" height="673" frameX="-18" frameY="0" frameWidth="628" frameHeight="673"/>
 </TextureAtlas>
