@@ -1,59 +1,70 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				115,
 				189
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "idle",
-			"fps": 24,
-			"name": "Abi Idle",
-			"indices": []
+			"indices": [],
+			"name": "Abi Idle"
 		},
 		{
-			"loop": false,
-			"offsets": [
-				109,
-				193
-			],
-			"anim": "singLEFT",
-			"fps": 24,
-			"name": "Abi Left",
-			"indices": []
-		},
-		{
-			"loop": false,
 			"offsets": [
 				73,
 				117
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "Abi Down",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Abi Down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				21,
-				226
+				224
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "Abi Up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "Abi Up"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-7,
+				102,
+				226
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "sing",
+			"indices": [],
+			"name": "Abi Speaking"
+		},
+		{
+			"offsets": [
+				-8,
 				213
 			],
-			"anim": "singRIGHT",
+			"indices": [],
 			"fps": 24,
-			"name": "Abi Right",
-			"indices": []
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Abi Right"
+		},
+		{
+			"offsets": [
+				106,
+				193
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Abi Left"
 		}
 	],
 	"no_antialiasing": false,

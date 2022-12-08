@@ -1,6 +1,6 @@
 function generateStage()
 {
-    curStage = 'stairs';
+    curStage = 'alleyway';
     PlayState.defaultCamZoom = 0.8;
 
     var bg:FNFSprite = new FNFSprite(-600, -200).loadGraphic(Paths.image('alley', 'stages/' + curStage));
@@ -13,6 +13,12 @@ function generateStage()
 function repositionPlayers(boyfriend:Character, gf:Character, dad:Character)
 {
     gf.visible = false;
+
+	boyfriend.y += 180;
+	boyfriend.x -= 350;
+
+	dad.x -= 280;
+
     /*
 	//boyfriend.x += 200;
     boyfriend.y -= 120;

@@ -26,6 +26,8 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 	public var healthBarBG:FlxSprite;
 	public var healthBar:FlxBar;
 
+	public static var healthBarY:Float;
+
 	public var iconP1:HealthIcon;
 	public var iconP2:HealthIcon;
 
@@ -45,32 +47,9 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 	private final barEnemy = FlxColor.fromRGB(PlayState.dad.characterData.barColor[0], PlayState.dad.characterData.barColor[1],
 		PlayState.dad.characterData.barColor[2]);
 
-	var vgblack:FlxSprite;
-	var vgAlpha:Float = 0;
-	var vgPath:String = 'black';
-
 	public function new()
 	{
 		super();
-
-		switch (PlayState.SONG.song.toLowerCase())
-		{
-			case "hushed":
-				vgAlpha = 0.4;
-			case "forewarn" | 'conscious':
-				vgAlpha = 0.7;
-			case "downward-spiral":
-				vgAlpha = 1;
-			case "gelid":
-				vgAlpha = 0.43;
-				vgPath = "white";
-			default:
-				vgAlpha = 0;
-		}
-
-		vgblack = new FlxSprite().loadGraphic(Paths.image('UI/' + vgPath + '-vignette'));
-		vgblack.alpha = vgAlpha;
-		add(vgblack);
 
 		// le healthbar setup
 		var barY = FlxG.height * 0.875;
@@ -87,6 +66,8 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, barFillDir, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8));
 		healthBar.scrollFactor.set();
 		updateBar();
+
+		healthBarY = healthBar.y;
 
 		// healthBar
 		add(healthBar);
@@ -128,6 +109,16 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		}
 
 		add(autoplayMark);
+
+		if (PlayState.SONG.song.toLowerCase() == 'paralyze')
+		{
+			healthBarBG.visible = false;
+			healthBar.visible = false;
+			healthBarOverlay.visible = false;
+			iconP1.visible = false;
+			iconP2.visible = false;
+			scoreBar.visible = false;
+		}
 
 
 		updateScoreText();

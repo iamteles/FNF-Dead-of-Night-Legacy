@@ -26,6 +26,7 @@ import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.system.FlxSound;
 import flixel.system.scaleModes.RatioScaleMode;
+import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
@@ -134,8 +135,14 @@ class PlayState extends MusicBeatState
 	public static var camGame:FlxCamera;
 	public static var camAlt:FlxCamera;
 	public static var dialogueHUD:FlxCamera;
+	public static var vignetteHUD:FlxCamera;
 	public static var comboHUD:FlxCamera;
 	public static var strumHUD:Array<FlxCamera>;
+
+	var vgblack:FlxSprite;
+	var vgAlpha:Float = 0;
+	var vgPath:String = 'black';
+	public static var lyricsText:FlxText;
 
 	public var camDisplaceX:Float = 0;
 	public var camDisplaceY:Float = 0; // might not use depending on result
@@ -303,7 +310,7 @@ class PlayState extends MusicBeatState
 
 	function doTweenCheck(isDad:Bool = false):Bool
 	{
-		if (isDad && Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "conscious")
+		if (isDad && Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "paralyze")
 			return false;
 		if (skipCountdown)
 			return false;
@@ -433,7 +440,7 @@ class PlayState extends MusicBeatState
 			}
 
 			// for the opponent
-			if (!Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "conscious")
+			if (!Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "paralyze")
 			{
 				var lineColorP2 = 0xFFFF0000;
 
@@ -599,7 +606,7 @@ class PlayState extends MusicBeatState
 		// initialize ui elements
 		var isMScroll:Bool = false;
 
-		if (Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "conscious")
+		if (Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "paralyze")
 		{
 			isMScroll = true;
 		}
@@ -636,7 +643,7 @@ class PlayState extends MusicBeatState
 			strumLines.members[i].allNotes.cameras = [strumHUD[i]];
 		}
 
-		if (Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "conscious")
+		if (Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "paralyze")
 		{
 			for (i in 0...PlayState.dadStrums.members.length)
 			{
@@ -670,6 +677,36 @@ class PlayState extends MusicBeatState
 		// precache judgements and combo before using them;
 		popJudgement('sick', false, true, true);
 
+		vignetteHUD = new FlxCamera();
+		vignetteHUD.bgColor.alpha = 0;
+		FlxG.cameras.add(vignetteHUD, false);
+
+		switch (SONG.song.toLowerCase())
+		{
+			case "hushed":
+				vgAlpha = 0.4;
+			case "forewarn" | 'conscious' | 'paralyze':
+				vgAlpha = 0.7;
+			case "downward-spiral":
+				vgAlpha = 1;
+			case "gelid":
+				vgAlpha = 0.43;
+				vgPath = "white";
+			default:
+				vgAlpha = 0;
+		}
+
+		vgblack = new FlxSprite().loadGraphic(Paths.image('UI/' + vgPath + '-vignette'));
+		vgblack.alpha = vgAlpha;
+		vgblack.cameras = [vignetteHUD];
+		add(vgblack);
+
+		lyricsText = new FlxText(FlxG.width / 2, 550, 0, "");
+		lyricsText.setFormat(Paths.font('prime'), 46, FlxColor.BLACK);
+		lyricsText.setBorderStyle(OUTLINE, FlxColor.WHITE, 1.5);
+		lyricsText.antialiasing = true;
+		add(lyricsText);
+
 		// create a hud over the hud camera for dialogue
 		dialogueHUD = new FlxCamera();
 		dialogueHUD.bgColor.alpha = 0;
@@ -679,6 +716,8 @@ class PlayState extends MusicBeatState
 		{
 			case 'conscious':
 				PlayState.defaultCamZoom = 0.8;
+			case 'paralyze':
+				PlayState.defaultCamZoom = 0.7;
 		}
 
 		keysArray = [
@@ -700,7 +739,6 @@ class PlayState extends MusicBeatState
 			songCutscene();
 		else
 			startCountdown();
-
 
 
 		callFunc('postCreate', []);
@@ -949,6 +987,25 @@ class PlayState extends MusicBeatState
 		return cast songSpeed = value;
 	}
 
+	public static function updateLyrics(what:String, ?add:Bool = false, ?red:Bool = false)
+	{
+		lyricsText.cameras = [vignetteHUD];
+
+		if (!add)
+			lyricsText.text = what;
+		else
+			lyricsText.text += what;
+
+		if (red)
+			lyricsText.setFormat(Paths.font('prime'), 46, FlxColor.RED);
+		else
+			lyricsText.setFormat(Paths.font('prime'), 46, FlxColor.BLACK);
+
+		lyricsText.setBorderStyle(OUTLINE, FlxColor.WHITE, 1.5);
+
+		lyricsText.x = Math.floor((FlxG.width / 2) - (lyricsText.width / 2));
+	}
+
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
@@ -1119,6 +1176,7 @@ class PlayState extends MusicBeatState
 			FlxG.camera.angle = FlxMath.lerp(0 + forceZoom[2], FlxG.camera.angle, easeLerp);
 			for (hud in allUIs)
 				hud.angle = FlxMath.lerp(0 + forceZoom[3], hud.angle, easeLerp);
+
 
 			// Controls
 
@@ -2489,7 +2547,7 @@ class PlayState extends MusicBeatState
 				FlxTween.tween(darknessLine2, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
 			}
 
-			if (!Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "conscious")
+			if (!Init.getSetting('Centered Receptors') || SONG.song.toLowerCase() == "paralyze")
 			{
 				darknessOpponent.x = dadStrums.receptors.members[0].x + 20;
 				darknessLine3.x = darknessOpponent.x - 5;

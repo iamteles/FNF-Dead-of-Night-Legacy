@@ -350,6 +350,16 @@ class Paths
 		return (FlxAtlasFrames.fromSpriteSheetPacker(image(key, folder, library), file('$folder/$key.txt', library)));
 	}
 
+	inline static public function frag(key:String, ?library:String)
+	{
+		return getPath('shaders/$key.frag', TEXT, library);
+	}
+
+	inline static public function vert(key:String, ?library:String)
+	{
+		return getPath('shaders/$key.vert', TEXT, library);
+	}
+
 	inline static public function video(key:String, ?library:String)
 	{
 		var modFile:String = ModManager.getModFile('videos/$key.$VIDEO_EXT');
