@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				115,
+				189
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Abi Idle"
+		},
+		{
+			"offsets": [
+				115,
+				189
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Abi Idle"
+		},
+		{
+			"offsets": [
+				115,
+				189
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Abi Idle"
+		},
+		{
+			"offsets": [
+				115,
+				189
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Abi Idle"
+		},
+		{
+			"offsets": [
+				115,
+				189
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Abi Idle"
+		},
+		{
+			"offsets": [
+				220,
+				226
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "sing",
+			"loop": false,
+			"name": "Abi Speaking"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/abe",
+	"position": [
+		-130,
+		370
+	],
+	"healthicon": "abi",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		255,
+		140
+	],
+	"camera_position": [
+		30,
+		-40
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

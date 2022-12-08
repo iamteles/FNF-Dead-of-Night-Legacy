@@ -19,7 +19,7 @@
 			],
 			"anim": "singLEFT",
 			"fps": 24,
-			"name": "Abi Left",
+			"name": "Abi Right",
 			"indices": []
 		},
 		{
@@ -52,7 +52,7 @@
 			],
 			"anim": "singRIGHT",
 			"fps": 24,
-			"name": "Abi Right",
+			"name": "Abi Left",
 			"indices": []
 		}
 	],
@@ -70,8 +70,8 @@
 		140
 	],
 	"camera_position": [
-		30,
-		-140
+		-15,
+		-240
 	],
 	"sing_duration": 4,
 	"scale": 1
