@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="A Dialouge.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="A neutral0000" x="0" y="0" width="886" height="1057" pivotX="0" pivotY="0"/>
+	<SubTexture name="A neutral0001" x="0" y="0" width="886" height="1057"/>
+	<SubTexture name="A neutral0002" x="0" y="0" width="886" height="1057"/>
+	<SubTexture name="A neutral0003" x="0" y="0" width="886" height="1057"/>
+	<SubTexture name="A neutral0004" x="0" y="0" width="886" height="1057"/>
+	<SubTexture name="A neutral0005" x="0" y="0" width="886" height="1057"/>
+	<SubTexture name="A neutral0006" x="0" y="0" width="886" height="1057"/>
+	<SubTexture name="A neutral0007" x="0" y="0" width="886" height="1057"/>
+	<SubTexture name="A neutral0008" x="0" y="0" width="886" height="1057"/>
+</TextureAtlas>

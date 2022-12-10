@@ -286,7 +286,7 @@ class Alphabet extends FlxTypedSpriteGroup<AlphaCharacter>
 								if (daSound == null)
 									FlxG.sound.play(Paths.sound('pixelText'));
 								else
-									FlxG.sound.play(daSound);
+									FlxG.sound.play(openfl.media.Sound.fromFile(daSound));
 							}
 						}
 					}

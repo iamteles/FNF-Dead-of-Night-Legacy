@@ -166,7 +166,7 @@ class CreditsMenu extends MusicBeatState
 		}
 		else
 		{
-			menuBack = new FlxSprite().loadGraphic(Paths.image('menus/base/menuDesat'));
+			menuBack = new FlxSprite().loadGraphic(Paths.image('menus/title/title-screen-bg'));
 			menuBack.antialiasing = antialias;
 		}
 		add(menuBack);

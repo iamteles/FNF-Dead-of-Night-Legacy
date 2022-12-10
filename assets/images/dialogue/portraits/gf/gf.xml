@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="GF Dialouge.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Girlfriend Mad0000" x="0" y="0" width="452" height="646" pivotX="62" pivotY="21.85" frameX="0" frameY="-35" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Mad0001" x="0" y="0" width="452" height="646" frameX="0" frameY="-35" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Mad0002" x="467" y="0" width="413" height="681" frameX="-17" frameY="0" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Mad0003" x="467" y="0" width="413" height="681" frameX="-17" frameY="0" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Mad0004" x="895" y="0" width="429" height="673" frameX="-10" frameY="-8" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Mad0005" x="895" y="0" width="429" height="673" frameX="-10" frameY="-8" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Mad0006" x="1339" y="0" width="430" height="665" frameX="-10" frameY="-16" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Mad0007" x="1784" y="0" width="430" height="665" frameX="-10" frameY="-16" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Mad0008" x="2229" y="0" width="432" height="663" frameX="-9" frameY="-18" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Mad0009" x="2229" y="0" width="432" height="663" frameX="-9" frameY="-18" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Neutral0000" x="2676" y="0" width="452" height="646" pivotX="10.25" pivotY="21.85" frameX="0" frameY="-35" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Neutral0001" x="2676" y="0" width="452" height="646" frameX="0" frameY="-35" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Neutral0002" x="3143" y="0" width="413" height="681" frameX="-19" frameY="0" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Neutral0003" x="3143" y="0" width="413" height="681" frameX="-19" frameY="0" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Neutral0004" x="3571" y="0" width="429" height="673" frameX="-11" frameY="-8" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Neutral0005" x="3571" y="0" width="429" height="673" frameX="-11" frameY="-8" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Neutral0006" x="0" y="696" width="431" height="665" frameX="-10" frameY="-16" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Neutral0007" x="446" y="696" width="431" height="665" frameX="-10" frameY="-16" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Neutral0008" x="892" y="696" width="432" height="663" frameX="-10" frameY="-18" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Neutral0009" x="892" y="696" width="432" height="663" frameX="-10" frameY="-18" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Sad0000" x="1339" y="696" width="452" height="646" pivotX="10.25" pivotY="21.85" frameX="0" frameY="-35" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Sad0001" x="1339" y="696" width="452" height="646" frameX="0" frameY="-35" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Sad0002" x="1806" y="696" width="413" height="681" frameX="-19" frameY="0" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Sad0003" x="1806" y="696" width="413" height="681" frameX="-19" frameY="0" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Sad0004" x="2234" y="696" width="429" height="673" frameX="-11" frameY="-8" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Sad0005" x="2234" y="696" width="429" height="673" frameX="-11" frameY="-8" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Sad0006" x="2678" y="696" width="431" height="665" frameX="-10" frameY="-16" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Sad0007" x="3124" y="696" width="431" height="665" frameX="-10" frameY="-16" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Sad0008" x="3570" y="696" width="432" height="663" frameX="-10" frameY="-18" frameWidth="452" frameHeight="681"/>
+	<SubTexture name="Girlfriend Sad0009" x="3570" y="696" width="432" height="663" frameX="-10" frameY="-18" frameWidth="452" frameHeight="681"/>
+</TextureAtlas>

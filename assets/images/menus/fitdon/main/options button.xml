@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="options button.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="mm Options button0000" x="3" y="3" width="515" height="181" pivotX="0.25" pivotY="0" frameX="0" frameY="0" frameWidth="515" frameHeight="182"/>
+	<SubTexture name="mm Options button0001" x="3" y="3" width="515" height="181" frameX="0" frameY="0" frameWidth="515" frameHeight="182"/>
+	<SubTexture name="mm Options button0002" x="3" y="214" width="515" height="181" frameX="0" frameY="-1" frameWidth="515" frameHeight="182"/>
+	<SubTexture name="mm Options button0003" x="3" y="214" width="515" height="181" frameX="0" frameY="-1" frameWidth="515" frameHeight="182"/>
+</TextureAtlas>

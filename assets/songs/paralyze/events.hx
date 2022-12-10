@@ -1,19 +1,46 @@
+import sys.io.File;
+
 var tween:FlxTween;
+var wavyStrumLineNotes:Bool = false;
+
+var strumlineY:Float = 50;
 
 function postCreate()
 {
+	if (Init.getSetting('Downscroll'))
+		strumlineY = FlxG.height - 200;
 	PlayState.vignetteHUD.fade(ForeverTools.returnColor('black'), 0.01, false);
 	PlayState.dad.alpha = 0.0001;
 	//PlayState.defaultCamZoom = 0.4;
 	PlayState.scriptDebugMode = true;
 
-
-
 	tween = FlxTween.tween(PlayState.dad, {y: PlayState.dad.y - 40}, 1.5, {type: FlxTween.PINGPONG, ease: FlxEase.sineInOut});
 }
 
-function stepHit(curStep:Int)
+function update(elapsed:Float)
 {
+	if (wavyStrumLineNotes) {  // i love tr1ngle engine
+		for (i in 0...PlayState.bfStrums.receptors.members.length) {
+			PlayState.bfStrums.receptors.members[i].y = strumlineY + Math.sin(Conductor.songPosition / 1000 * 5 + (i % 4 + 1)) * 20 + 20;
+		}
+	}
+
+	else {
+		for (i in 0...PlayState.bfStrums.receptors.members.length) {
+			PlayState.bfStrums.receptors.members[i].y = strumlineY;
+		}
+	}
+}
+
+function stepHit(curStep:Int) 	
+{
+	/*
+		TODO LIST
+			zooms - j
+			beats - j
+			flashes - j
+			other stuff????????????????????
+	*/
 	switch (curStep)
 	{
 		case 1:
@@ -82,5 +109,19 @@ function stepHit(curStep:Int)
 			PlayState.updateLyrics("GET OUT OF MY HEAD", false, true);
 		case 1700:
 			PlayState.updateLyrics("", false);
+		case 1823:
+			wavyStrumLineNotes = true;
+			PlayState.hudFlash(0.5);
+		case 2079:
+			wavyStrumLineNotes = false;
+			PlayState.hudFlash(0.5);
+		case 2591:
+			wavyStrumLineNotes = true;
+			PlayState.hudFlash(0.5);
+		case 2750:
+			wavyStrumLineNotes = false;
+			PlayState.hudFlash(0.5);
+		case 2720:
+			PlayState.vignetteHUD.fade(ForeverTools.returnColor('black'), 0.3, false);
 	}
 }

@@ -1,7 +1,11 @@
 package states.menus;
 
+import base.*;
 import base.MusicBeat.MusicBeatState;
-import dependency.Discord;
+import base.SongLoader.Song;
+import base.WeekParser.WeekDataDef;
+import base.WeekParser.WeekSongDef;
+import dependency.*;
 import flixel.FlxCamera;
 import flixel.FlxG;
 import flixel.FlxObject;
@@ -14,6 +18,7 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
 import lime.app.Application;
 import states.substates.PauseSubstate;
 import sys.FileSystem;
@@ -31,17 +36,23 @@ class MainMenu extends MusicBeatState
 	public static var curSelected:Float = 0;
 
 	public var bg:FlxSprite;
-	public var magenta:FlxSprite;
+	public var cursorSpr:FlxSprite;
 	public var camFollow:FlxObject;
 
 	public var camGame:FlxCamera;
 	public var camHUD:FlxCamera;
 
-	public var optionShit:Array<String> = ['story mode', 'freeplay', /*'mods',*/ 'credits', 'options'];
+	public var optionShit:Array<String> = ['Story Mode', 'Freeplay', 'Credits', 'Options'];
+	public var chars:Array<String> = ['Abi', 'BF', 'GF', 'A'];
 
-	public var forceCenter:Bool = true;
+	public var forceCenter:Bool = false;
 
-	public var menuItemScale:Float = 1;
+	public var menuItemScale:Float = 0.7;
+
+	public var char:FNFSprite;
+	public var abiOut:FNFSprite;
+
+	var randomChar:Int = 1;
 
 	function setCameras()
 	{
@@ -58,6 +69,8 @@ class MainMenu extends MusicBeatState
 	{
 		super.create();
 
+		randomChar = FlxG.random.int(0, 3);
+
 		// make sure the music is playing
 		ForeverTools.resetMenuMusic();
 
@@ -73,26 +86,16 @@ class MainMenu extends MusicBeatState
 
 		setCameras();
 
-		bg = new FlxSprite().loadGraphic(Paths.image('menus/base/menuBG'));
-		bg.scrollFactor.set(0, 0.17);
-		bg.setGraphicSize(Std.int(bg.width * 1.2));
+		bg = new FlxSprite(-180, 0).loadGraphic(Paths.image('menus/fitdon/main/main menu bg'));
+		bg.scrollFactor.set(0, 0);
+		//bg.setGraphicSize(Std.int(bg.width * 1.2));
 		bg.updateHitbox();
-		bg.screenCenter();
+		//bg.screenCenter();
 		bg.antialiasing = !Init.getSetting('Disable Antialiasing');
 		add(bg);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
-
-		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menus/base/menuDesat'));
-		magenta.scrollFactor.set(bg.scrollFactor.x, bg.scrollFactor.y);
-		magenta.setGraphicSize(Std.int(bg.width));
-		magenta.updateHitbox();
-		magenta.screenCenter();
-		magenta.visible = false;
-		magenta.antialiasing = !Init.getSetting('Disable Antialiasing');
-		magenta.color = 0xFFfd719b;
-		add(magenta);
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
@@ -100,22 +103,23 @@ class MainMenu extends MusicBeatState
 		for (i in 0...optionShit.length)
 		{
 			var maxLength:Float = 58 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 160) + maxLength);
-			menuItem.frames = Paths.getSparrowAtlas('menus/base/menuItems/' + optionShit[i]);
+			var menuItem:FlxSprite = new FlxSprite(100, (i * 160) + maxLength);
+			menuItem.frames = Paths.getSparrowAtlas('menus/fitdon/main/' + optionShit[i].toLowerCase() + ' button');
 
 			menuItem.scale.set(menuItemScale, menuItemScale);
 
-			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
-			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
+			menuItem.animation.addByPrefix('idle', 'mm ' + optionShit[i] + " button", 24);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
 
-			if (forceCenter)
-				menuItem.screenCenter(X);
+			/*
+			//if (forceCenter)
+			//	menuItem.screenCenter(X);
 			if (menuItem.ID % 2 == 0)
 				menuItem.x += 1000;
 			else
 				menuItem.x -= 1000;
+			*/
 
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
@@ -125,22 +129,17 @@ class MainMenu extends MusicBeatState
 			menuItem.antialiasing = !Init.getSetting('Disable Antialiasing');
 			menuItem.updateHitbox();
 		}
+		cursorSpr = new FlxSprite(50, 0).loadGraphic(Paths.image('menus/fitdon/main/menu cursor'));
+		cursorSpr.scrollFactor.set(0, 0);
+		cursorSpr.updateHitbox();
+		add(cursorSpr);
+
+		generateChar(randomChar);
 
 		var camLerp = Main.framerateAdjust(0.10);
 		FlxG.camera.follow(camFollow, null, camLerp);
 
 		updateSelection();
-
-		var versionShit:FlxText = new FlxText(5, FlxG.height
-			- 38, 0,
-			"Forever Engine Legacy v"
-			+ Main.foreverVersion
-			+ "\nForever Engine Underscore v"
-			+ Main.engineVersion
-			+ (Main.nightly ? '-nightly' : ''), 12);
-		versionShit.scrollFactor.set();
-		versionShit.setFormat(Paths.font('vcr'), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(versionShit);
 	}
 
 	var selectedSomethin:Bool = false;
@@ -204,8 +203,6 @@ class MainMenu extends MusicBeatState
 
 				if (Init.getSetting('Disable Flashing Lights'))
 					flickerVal = 1;
-				if (!Init.getSetting('Disable Flashing Lights'))
-					FlxFlicker.flicker(magenta, 0.8, 0.1, false);
 
 				menuItems.forEach(function(spr:FlxSprite)
 				{
@@ -223,14 +220,45 @@ class MainMenu extends MusicBeatState
 					{
 						FlxFlicker.flicker(spr, 1, flickerVal, false, false, function(flick:FlxFlicker)
 						{
-							switch (optionShit[Math.floor(curSelected)])
+							switch (optionShit[Math.floor(curSelected)].toLowerCase())
 							{
 								case 'story mode':
-									Main.switchState(this, new StoryMenu());
+									FlxTween.tween(spr, {alpha: 0, x: FlxG.width * 2}, 0.4, {
+										ease: FlxEase.quadOut,
+										onComplete: function(twn:FlxTween)
+										{
+											
+											spr.kill();
+										}
+									});
+
+									FlxTween.tween(cursorSpr, {alpha: 0, x: FlxG.width * 2}, 0.4, {
+										ease: FlxEase.quadOut,
+										onComplete: function(twn:FlxTween)
+										{
+											cursorSpr.kill();
+										}
+									});
+
+									FlxTween.tween(char, {alpha: 0}, 0.4, {
+										ease: FlxEase.quadOut,
+										onComplete: function(twn:FlxTween)
+										{
+											char.kill();
+										}
+									});
+
+									FlxTween.tween(bg, {alpha: 0}, 0.4, {
+										ease: FlxEase.quadOut,
+										onComplete: function(twn:FlxTween)
+										{
+											bg.kill();
+											enterWeek1();
+										}
+									});
+
 								case 'freeplay':
-									Main.switchState(this, new FreeplayMenu());
-								case 'mods':
-									Main.switchState(this, new ModsMenu());
+									Main.switchState(this, new FreeplayFatdon());
 								case 'credits':
 									Main.switchState(this, new CreditsMenu());
 								case 'options':
@@ -252,6 +280,8 @@ class MainMenu extends MusicBeatState
 
 		menuItems.forEach(function(menuItem:FlxSprite)
 		{
+			if (menuItem.ID == curSelected)
+				cursorSpr.y = menuItem.y + 20;
 			if (forceCenter)
 				menuItem.screenCenter(X);
 		});
@@ -259,6 +289,54 @@ class MainMenu extends MusicBeatState
 
 	var lastCurSelected:Int = 0;
 
+	function generateChar(rand:Int)
+	{
+		char = new FNFSprite(425, 0);
+		char.frames = Paths.getSparrowAtlas('menus/fitdon/main/menu ' + chars[rand].toLowerCase());
+		char.animation.addByPrefix("idle", chars[rand] + " main menu", 24);
+		char.animation.play('idle');
+		char.scrollFactor.set(0, 0);
+		char.scale.set(0.5, 0.5);
+		char.updateHitbox();
+		char.screenCenter(Y);
+		char.x += 270;
+		add(char);
+
+		abiOut = new FNFSprite(0, 900);
+		abiOut.frames = Paths.getSparrowAtlas('menus/fitdon/main/abi week 1 groove');
+		abiOut.animation.addByPrefix("idle", "Abi story mode", 24);
+		abiOut.animation.play('idle');
+		abiOut.scrollFactor.set(0, 0);
+		abiOut.scale.set(0.5, 0.5);
+		abiOut.updateHitbox();
+		abiOut.screenCenter(X);
+		add(abiOut);
+	}
+	
+	function enterWeek1()
+	{
+		PlayState.storyPlaylist = ['Hushed', 'Forewarn', 'Downward-Spiral'];
+		PlayState.isStoryMode = true;
+
+		var diffic:String = CoolUtil.returnDifficultySuffix(0);
+		PlayState.storyDifficulty = 0;
+
+		PlayState.SONG = Song.loadSong(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
+		PlayState.storyWeek = 0;
+		PlayState.campaignScore = 0;
+		Conductor.playbackRate = 1;
+
+		FlxG.sound.music.fadeOut(1);
+		FlxTween.tween(abiOut, {y: Math.floor(FlxG.height / 2) - 250}, 1, {
+			ease: FlxEase.quadOut,
+			onComplete: function(twn:FlxTween)
+			{
+				new FlxTimer().start(1, function(tmr:FlxTimer)
+				{
+					Main.switchState(this, new PlayState());
+				});
+			}});
+	}
 	function updateSelection()
 	{
 		// reset all selections
@@ -277,9 +355,6 @@ class MainMenu extends MusicBeatState
 		// set the sprites and all of the current selection
 		camFollow.setPosition(menuItems.members[Math.floor(curSelected)].getGraphicMidpoint().x,
 			menuItems.members[Math.floor(curSelected)].getGraphicMidpoint().y - itemLength);
-
-		if (menuItems.members[Math.floor(curSelected)].animation.curAnim.name == 'idle')
-			menuItems.members[Math.floor(curSelected)].animation.play('selected');
 
 		menuItems.members[Math.floor(curSelected)].updateHitbox();
 

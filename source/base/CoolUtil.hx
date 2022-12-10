@@ -9,7 +9,7 @@ using StringTools;
 
 class CoolUtil
 {
-	public static var baseDifficulties:Array<String> = ["EASY", "NORMAL", "HARD"];
+	public static var baseDifficulties:Array<String> = ["NORMAL"];
 
 	public static var difficulties:Array<String> = [];
 

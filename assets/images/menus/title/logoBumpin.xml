@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="logoBumpin.png">
+	<!-- Created with Adobe Animate version 22.0.8.217 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="LogoBump0000" x="0" y="0" width="998" height="408" pivotX="139.2" pivotY="37.55" frameX="-44" frameY="-18" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0001" x="0" y="0" width="998" height="408" frameX="-44" frameY="-18" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0002" x="0" y="408" width="1086" height="444"/>
+	<SubTexture name="LogoBump0003" x="0" y="408" width="1086" height="444"/>
+	<SubTexture name="LogoBump0004" x="0" y="852" width="1039" height="425" frameX="-23" frameY="-9" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0005" x="0" y="852" width="1039" height="425" frameX="-23" frameY="-9" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0006" x="0" y="1277" width="1027" height="420" frameX="-29" frameY="-12" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0007" x="0" y="1277" width="1027" height="420" frameX="-29" frameY="-12" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0008" x="0" y="1277" width="1027" height="420" frameX="-29" frameY="-12" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0009" x="0" y="1277" width="1027" height="420" frameX="-29" frameY="-12" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0010" x="0" y="1277" width="1027" height="420" frameX="-29" frameY="-12" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0011" x="0" y="1277" width="1027" height="420" frameX="-29" frameY="-12" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0012" x="0" y="1277" width="1027" height="420" frameX="-29" frameY="-12" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0013" x="0" y="1277" width="1027" height="420" frameX="-29" frameY="-12" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0014" x="0" y="1277" width="1027" height="420" frameX="-29" frameY="-12" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0015" x="0" y="1277" width="1027" height="420" frameX="-29" frameY="-12" frameWidth="1086" frameHeight="444"/>
+	<SubTexture name="LogoBump0016" x="0" y="1277" width="1027" height="420" frameX="-29" frameY="-12" frameWidth="1086" frameHeight="444"/>
+</TextureAtlas>

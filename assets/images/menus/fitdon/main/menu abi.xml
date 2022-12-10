@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu abi.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Abi main menu0000" x="3" y="3" width="993" height="1229" pivotX="0" pivotY="0" frameX="0" frameY="-4" frameWidth="1000" frameHeight="1233"/>
+	<SubTexture name="Abi main menu0001" x="3" y="3" width="993" height="1229" frameX="0" frameY="-4" frameWidth="1000" frameHeight="1233"/>
+	<SubTexture name="Abi main menu0002" x="3" y="3" width="993" height="1229" frameX="0" frameY="-4" frameWidth="1000" frameHeight="1233"/>
+	<SubTexture name="Abi main menu0003" x="1026" y="3" width="1000" height="1227" frameX="0" frameY="0" frameWidth="1000" frameHeight="1233"/>
+	<SubTexture name="Abi main menu0004" x="1026" y="3" width="1000" height="1227" frameX="0" frameY="0" frameWidth="1000" frameHeight="1233"/>
+	<SubTexture name="Abi main menu0005" x="1026" y="3" width="1000" height="1227" frameX="0" frameY="0" frameWidth="1000" frameHeight="1233"/>
+</TextureAtlas>

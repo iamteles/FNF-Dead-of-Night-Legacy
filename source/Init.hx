@@ -501,9 +501,6 @@ class Init extends FlxState
 		if (FlxG.save.data.ratingOffset != null)
 			ratingOffset = FlxG.save.data.ratingOffset;
 
-		if (!trueSettings.get('Left Flashing State'))
-			Main.mainClassState = states.WarningState;
-
 		saveSettings();
 		updateAll();
 	}

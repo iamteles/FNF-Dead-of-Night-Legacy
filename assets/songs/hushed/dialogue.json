@@ -1,0 +1,107 @@
+{
+    "box": "speech_bubble_talking",
+    "boxState": "normal",
+    "dialogue": [
+		{
+            "portrait": "bf",
+			"expression": "mad",
+            "text": ". . . ."
+        },
+		{
+            "portrait": "gf",
+			"expression": "sad",
+            "text": "I know BF, its been a long walk"
+        },
+        {
+            "portrait": "gf",
+			"expression": "normal",
+            "text": "But hey! We are almost there!"
+        },
+        {
+            "portrait": "gf",
+			"expression": "normal",
+            "text": "We just have to turn this corner and we\nshould be right th-"
+        },
+        {
+            "portrait": "abi",
+			"expression": "mad",
+            "text": "WHERE TO GO WHERE TO GO"
+        },
+        {
+            "portrait": "gf",
+			"expression": "sad",
+            "text": "Yo wtf???"
+        },
+        {
+            "portrait": "abi",
+			"expression": "smug",
+            "text": "oh my god im so sorry uhhhhhh gotta go"
+        },
+        {
+            "portrait": "gf",
+			"expression": "mad",
+            "text": "Aye hold it!"
+        },
+        {
+            "portrait": "abi",
+			"expression": "what",
+            "text": ". . ."
+        },
+        {
+            "portrait": "gf",
+			"expression": "normal",
+            "text": "Now where are you going in such a hurry?"
+        },
+        {
+            "portrait": "abi",
+			"expression": "sad",
+            "text": "(god here we go again)"
+        },
+        {
+            "portrait": "abi",
+			"expression": "normal",
+            "text": "im sorry i cant really explain it.."
+        },
+        {
+            "portrait": "abi",
+			"expression": "normal",
+            "text": "but staying here will put you 2 in danger\nso I REALLY should go"
+        },
+        {
+            "portrait": "bf",
+			"expression": "normal",
+            "text": "beep skloop"
+        },
+        {
+            "portrait": "abi",
+			"expression": "what",
+            "text": "eh?"
+        },
+        {
+            "portrait": "gf",
+			"expression": "normal",
+            "text": "You seem really stressed and my BF\nhere wants to rap battle you!"
+        },
+        {
+            "portrait": "gf",
+			"expression": "normal",
+            "text": "He and I both want to try and help you\nfeel at least a little better"
+        },
+        {
+            "portrait": "abi",
+			"expression": "normal",
+            "text": ". . ."
+        },
+        {
+            "portrait": "abi",
+			"expression": "normal",
+            "text": "...ok then. I guess i can do that"
+        },
+        {
+            "portrait": "abi",
+			"expression": "normal",
+            "text": "Maybe some wind down time is just what i\nneed.."
+        }
+
+	]
+}

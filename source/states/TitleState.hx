@@ -90,14 +90,9 @@ class TitleState extends MusicBeatState
 
 		persistentUpdate = true;
 
-		if (titleData.bgSprite != null || titleData.bgSprite.length > 0)
-		{
-			bg = new FlxSprite().loadGraphic(Paths.image(titleData.bgSprite));
-			bg.antialiasing = !titleData.bgAntialiasing;
-			bg.updateHitbox();
-		}
-		else
-			bg = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		bg = new FlxSprite().loadGraphic(Paths.image('menus/title/title-screen-bg'));
+		bg.antialiasing = !titleData.bgAntialiasing;
+		bg.updateHitbox();
 		add(bg);
 
 		gfDance = new FlxSprite(titleData.gfPosition[0], titleData.gfPosition[1]);
@@ -105,13 +100,13 @@ class TitleState extends MusicBeatState
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		gfDance.antialiasing = !Init.getSetting('Disable Antialiasing');
+		gfDance.alpha = 0;
 		add(gfDance);
 
-		gameLogo = new FlxSprite(titleData.logoPosition[0], titleData.logoPosition[1]);
-		gameLogo.loadGraphic(Paths.image('menus/base/title/logo'));
+		gameLogo = new FlxSprite(0, 0);
+		gameLogo.loadGraphic(Paths.image('menus/title/static'));
 		gameLogo.antialiasing = !Init.getSetting('Disable Antialiasing');
-		initLogowidth = gameLogo.width;
-		newLogoScale = gameLogo.scale.x;
+		gameLogo.screenCenter();
 		add(gameLogo);
 
 		gfDance.shader = swagShader.shader;
@@ -119,6 +114,7 @@ class TitleState extends MusicBeatState
 
 		titleText = new FlxSprite(100, FlxG.height * 0.8);
 		titleText.frames = Paths.getSparrowAtlas('menus/base/title/titleEnter');
+		titleText.alpha = 0;
 		var animFrames:Array<FlxFrame> = [];
 		@:privateAccess {
 			titleText.animation.findByPrefix(animFrames, "ENTER IDLE");
@@ -228,7 +224,7 @@ class TitleState extends MusicBeatState
 				timer = FlxEase.quadInOut(timer);
 
 				titleText.color = FlxColor.interpolate(titleTextColors[0], titleTextColors[1], timer);
-				titleText.alpha = FlxMath.lerp(titleTextAlphas[0], titleTextAlphas[1], timer);
+				//titleText.alpha = FlxMath.lerp(titleTextAlphas[0], titleTextAlphas[1], timer);
 			}
 
 			if (FlxG.keys.justPressed.ESCAPE && !pressedEnter)
@@ -243,7 +239,7 @@ class TitleState extends MusicBeatState
 			if (pressedEnter)
 			{
 				titleText.color = FlxColor.WHITE;
-				titleText.alpha = 1;
+				//titleText.alpha = 1;
 				titleText.animation.play('press');
 
 				if (!Init.getSetting('Disable Flashing Lights'))
@@ -258,8 +254,8 @@ class TitleState extends MusicBeatState
 
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
-					if (ForeverTools.mustUpdate && !WarningState.leftState && !Main.nightly)
-						Main.switchState(this, new WarningState('update'));
+					if (!WarningState.leftState)
+						Main.switchState(this, new WarningState('fitdon'));
 					else
 						Main.switchState(this, new MainMenu());
 				});

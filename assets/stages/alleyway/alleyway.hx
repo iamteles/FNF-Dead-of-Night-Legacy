@@ -8,6 +8,18 @@ function generateStage()
     bg.scrollFactor.set(1, 1);
     bg.active = false;
     add(bg);
+
+	var wall:FNFSprite = new FNFSprite(-600, 800).loadGraphic(Paths.image('foreground brain', 'stages/' + curStage));
+	wall.antialiasing = true;
+	wall.scrollFactor.set(0.4, 0.4);
+	wall.active = false;
+	foreground.add(wall);
+
+	var head:FNFSprite = new FNFSprite(1200, 800).loadGraphic(Paths.image('foreground head', 'stages/' + curStage));
+	head.antialiasing = true;
+	head.scrollFactor.set(0.4, 0.4);
+	head.active = false;
+	foreground.add(head);
 }
 
 function repositionPlayers(boyfriend:Character, gf:Character, dad:Character)

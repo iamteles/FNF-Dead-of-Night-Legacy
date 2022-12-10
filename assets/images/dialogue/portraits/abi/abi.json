@@ -1,0 +1,24 @@
+{
+    "name": "abi",
+    "expressions": {
+        "normal": "Abi Neutral",
+        "mad": "Abi Plead",
+        "smug": "Abi Nervous",
+        "what": "Abi Confused"
+    },
+    "sounds": ["pixelText"],
+	"soundChance": 100,
+    "position": [0, 0],
+    "scale": 0.8,
+    "confirmSound": "cancelMenu",
+    "textColor": [
+        255,
+        255,
+        255
+    ],
+    "textBorderColor": [
+        0,
+        0,
+        0
+    ]
+}

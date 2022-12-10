@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="fitdon menu stuffs.png">
+	<!-- Created with Adobe Animate version 22.0.8.217 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Abi story mode0000" x="0" y="0" width="781" height="1020" pivotX="0" pivotY="0" frameX="-1" frameY="-6" frameWidth="782" frameHeight="1026"/>
+	<SubTexture name="Abi story mode0001" x="0" y="0" width="781" height="1020" frameX="-1" frameY="-6" frameWidth="782" frameHeight="1026"/>
+	<SubTexture name="Abi story mode0002" x="0" y="0" width="781" height="1020" frameX="-1" frameY="-6" frameWidth="782" frameHeight="1026"/>
+	<SubTexture name="Abi story mode0003" x="781" y="0" width="779" height="1023" frameX="0" frameY="-1" frameWidth="782" frameHeight="1026"/>
+	<SubTexture name="Abi story mode0004" x="781" y="0" width="779" height="1023" frameX="0" frameY="-1" frameWidth="782" frameHeight="1026"/>
+	<SubTexture name="Abi story mode0005" x="781" y="0" width="779" height="1023" frameX="0" frameY="-1" frameWidth="782" frameHeight="1026"/>
+	<SubTexture name="Abi story mode0006" x="1560" y="0" width="781" height="1023" frameX="0" frameY="0" frameWidth="782" frameHeight="1026"/>
+	<SubTexture name="Abi story mode0007" x="1560" y="0" width="781" height="1023" frameX="0" frameY="0" frameWidth="782" frameHeight="1026"/>
+	<SubTexture name="Abi story mode0008" x="1560" y="0" width="781" height="1023" frameX="0" frameY="0" frameWidth="782" frameHeight="1026"/>
+</TextureAtlas>

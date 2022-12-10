@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu gf.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="GF main menu0000" x="3" y="3" width="952" height="1161" pivotX="0" pivotY="0" frameX="0" frameY="-2" frameWidth="952" frameHeight="1176"/>
+	<SubTexture name="GF main menu0001" x="3" y="3" width="952" height="1161" frameX="0" frameY="-2" frameWidth="952" frameHeight="1176"/>
+	<SubTexture name="GF main menu0002" x="3" y="3" width="952" height="1161" frameX="0" frameY="-2" frameWidth="952" frameHeight="1176"/>
+	<SubTexture name="GF main menu0003" x="985" y="3" width="938" height="1176" frameX="0" frameY="0" frameWidth="952" frameHeight="1176"/>
+	<SubTexture name="GF main menu0004" x="985" y="3" width="938" height="1176" frameX="0" frameY="0" frameWidth="952" frameHeight="1176"/>
+	<SubTexture name="GF main menu0005" x="985" y="3" width="938" height="1176" frameX="0" frameY="0" frameWidth="952" frameHeight="1176"/>
+</TextureAtlas>

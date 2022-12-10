@@ -1,0 +1,81 @@
+{
+    "box": "speech_bubble_talking",
+    "boxState": "normal",
+    "dialogue": [
+		{
+            "portrait": "gf",
+			"expression": "normal",
+            "text": "You have a really cute singing voice!"
+        },
+        {
+            "portrait": "abi",
+			"expression": "smug",
+            "text": ". . ."
+        },
+        {
+            "portrait": "bf",
+			"expression": "normal",
+            "text": "bee bop skeebo"
+        },
+        {
+            "portrait": "abi",
+			"expression": "normal",
+            "text": "I um.. thanks.."
+        },
+        {
+            "portrait": "abi",
+			"expression": "mad",
+            "text": "But I still really think I should head out"
+        },
+        {
+            "portrait": "abi",
+			"expression": "mad",
+            "text": "I dont want it taking anymore lives tonight\nI wont allow it"
+        },
+        {
+            "portrait": "gf",
+			"expression": "smug",
+            "text": "ok that sounds serious please just tell us\nwhats wrong so we take the appropiate\naction"
+        },
+        {
+            "portrait": "abi",
+			"expression": "mad",
+            "text": "its really complicated I-"
+        },
+        {
+            "portrait": "gf",
+			"expression": "mad",
+            "text": "Ok you know what we are all gonna stay\nhere until we just tell us whats wrong"
+        },
+        {
+            "portrait": "bf",
+			"expression": "mad",
+            "text": ". . . ."
+        },
+        {
+            "portrait": "abi",
+			"expression": "smug",
+            "text": "(uuuuuu.. I really need to leave but I really\ndont want to piss these guys off.\nThey probably can AND will hurt me....)"
+        },
+        {
+            "portrait": "bf",
+			"expression": "normal",
+            "text": "bep booboo"
+        },
+        {
+            "portrait": "gf",
+			"expression": "smug",
+            "text": "..maybe another song will cheer you up. Lets\ngo"
+        },
+        {
+            "portrait": "abi",
+			"expression": "mad",
+            "text": "ah ok ok!.."
+        },
+        {
+            "portrait": "abi",
+			"expression": "smug",
+            "text": "(uuuu.. this is not gonna end well)"
+        }
+	]
+}

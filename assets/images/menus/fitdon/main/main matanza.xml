@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="main matanza.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="A main menu0000" x="3" y="3" width="1132" height="1430" pivotX="0" pivotY="0" frameX="0" frameY="-2" frameWidth="1145" frameHeight="1491"/>
+	<SubTexture name="A main menu0001" x="3" y="3" width="1132" height="1430" frameX="0" frameY="-2" frameWidth="1145" frameHeight="1491"/>
+	<SubTexture name="A main menu0002" x="3" y="3" width="1132" height="1430" frameX="0" frameY="-2" frameWidth="1145" frameHeight="1491"/>
+	<SubTexture name="A main menu0003" x="1165" y="3" width="1145" height="1491"/>
+	<SubTexture name="A main menu0004" x="1165" y="3" width="1145" height="1491"/>
+	<SubTexture name="A main menu0005" x="1165" y="3" width="1145" height="1491"/>
+</TextureAtlas>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="freeplay button.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="mm Freeplay button0000" x="3" y="3" width="459" height="214" pivotX="0" pivotY="0.3" frameX="0" frameY="0" frameWidth="463" frameHeight="214"/>
+	<SubTexture name="mm Freeplay button0001" x="3" y="3" width="459" height="214" frameX="0" frameY="0" frameWidth="463" frameHeight="214"/>
+	<SubTexture name="mm Freeplay button0002" x="3" y="247" width="460" height="213" frameX="-3" frameY="0" frameWidth="463" frameHeight="214"/>
+	<SubTexture name="mm Freeplay button0003" x="3" y="247" width="460" height="213" frameX="-3" frameY="0" frameWidth="463" frameHeight="214"/>
+</TextureAtlas>

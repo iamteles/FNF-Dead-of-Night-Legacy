@@ -1,0 +1,23 @@
+{
+    "name": "gf",
+    "expressions": {
+        "normal": "Girlfriend Neutral",
+        "mad": "Girlfriend Mad",
+        "smug": "Girlfriend Sad"
+    },
+    "position": [850, 0],
+    "scale": 0.8,
+    "sounds": ["pixelText"],
+	"soundChance": 100,
+    "confirmSound": "cancelMenu",
+    "textColor": [
+        255,
+        255,
+        255
+    ],
+    "textBorderColor": [
+        0,
+        0,
+        0
+    ]
+}

@@ -44,6 +44,12 @@ class WarningState extends MusicBeatState
 
 		switch (warningType)
 		{
+			case 'fitdon':
+				warningField = 'Hey, this mod contains intensive shaders and flashing lights.'
+					+ "\nIf you are experiencing lag, crashes or are photosensitive,"
+					+ "\nplease consider disabling them in the Options Menu."
+					+ "\n"
+					+ "\nPress ENTER to continue.";
 			case 'update':
 				warningField = "Hey, You're running an outdated version of"
 					+ "\nForever Engine Underscore"
@@ -64,7 +70,7 @@ class WarningState extends MusicBeatState
 		generateBackground();
 
 		warningText = new FlxText(0, 0, FlxG.width - fieldOffset, warningField, 32);
-		warningText.setFormat(Paths.font("vcr"), 32, FlxColor.WHITE, CENTER);
+		warningText.setFormat(Paths.font("prime"), 32, FlxColor.WHITE, CENTER);
 		warningText.screenCenter();
 		warningText.alpha = 0;
 		warningText.antialiasing = !Init.getSetting('Disable Antialiasing');
@@ -101,17 +107,13 @@ class WarningState extends MusicBeatState
 		darkBackground.alpha = 0;
 		add(darkBackground);
 
-		funkyBack = new FlxSprite().loadGraphic(Paths.image('menus/chart/bg'));
+		funkyBack = new FlxSprite().loadGraphic(Paths.image('menus/title/title-screen-bg'));
 		funkyBack.setGraphicSize(Std.int(FlxG.width));
 		funkyBack.scrollFactor.set();
 		funkyBack.blend = BlendMode.DIFFERENCE;
 		funkyBack.screenCenter();
 		funkyBack.alpha = 0;
 		add(funkyBack);
-
-		FlxTween.tween(background, {alpha: 0.6}, 0.4);
-		FlxTween.tween(darkBackground, {alpha: 0.7}, 0.4);
-		FlxTween.tween(funkyBack, {alpha: 0.07}, 0.4);
 	}
 
 	function textFinishCallback(type:String = 'flashing')
@@ -120,6 +122,17 @@ class WarningState extends MusicBeatState
 
 		switch (type)
 		{
+			case 'fitdon':
+				FlxG.sound.play(Paths.sound('confirmMenu'));
+				for (i in bgSprites)
+					FlxTween.tween(i, {alpha: 0}, 0.6);
+				FlxTween.tween(warningText, {alpha: 0}, 0.6, {
+					onComplete: function(twn:FlxTween)
+					{
+						leftState = true;
+						Main.switchState(this, new MainMenu());
+					}
+				});
 			case 'update':
 				if (!FlxG.keys.justPressed.ESCAPE)
 				{

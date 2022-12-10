@@ -154,7 +154,7 @@ class OptionsMenu extends MusicBeatState
 		Alphabet.letterOffset = false;
 
 		// call the options menu
-		bg = new FlxSprite(-85).loadGraphic(Paths.image('menus/base/menuDesat'));
+		bg = new FlxSprite(-85).loadGraphic(Paths.image('menus/title/title-screen-bg'));
 		bg.scrollFactor.set(0, 0.18);
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();

@@ -20,7 +20,7 @@ class GameOverSubstate extends MusicBeatSubstate
 	var tankNoise:FlxSound;
 	var confirmNoise:FlxSound;
 
-	public static var character:String = 'bf-dead';
+	public static var character:String = 'bf';
 	public static var deathMusic:String = 'gameOver';
 	public static var deathSound:String = 'fnf_loss_sfx';
 	public static var deathConfirm:String = 'gameOverEnd';
@@ -28,12 +28,11 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	public static var contents:GameOverSubstate;
 
-	public static function resetGameOver()
+	public static function resetGameOver(?char:String = 'bf', ?sound:String = 'DeathSoundBF', ?song:String = 'DeathMusicBF')
 	{
-		character = 'bf-dead';
-		deathMusic = 'gameOver';
-		deathSound = 'fnf_loss_sfx';
-		deathConfirm = 'gameOverEnd';
+		character = char;
+		deathMusic = song;
+		deathSound = sound;
 		deathBPM = 100;
 	}
 
@@ -65,8 +64,6 @@ class GameOverSubstate extends MusicBeatSubstate
 		}
 
 		// precache confirm sound
-		confirmNoise = new FlxSound().loadEmbedded(Paths.music(deathConfirm), false, true);
-		FlxG.sound.list.add(confirmNoise);
 
 		bf = new Character(true);
 		bf.setCharacter(0, 0, character);
@@ -131,6 +128,9 @@ class GameOverSubstate extends MusicBeatSubstate
 				}
 			}
 		}
+		if(character == "para")
+			bf.alpha = 0;
+		
 		PlayState.contents.callFunc('postUpdate', [elapsed]);
 
 		if (FlxG.sound.music != null)
@@ -151,7 +151,6 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 				isEnding = true;
 				bf.playAnim('deathConfirm', true);
-				confirmNoise.play(false);
 				new FlxTimer().start(0.9, function(tmr:FlxTimer)
 				{
 					FlxG.camera.fade(FlxColor.BLACK, 0.7, false, function()
@@ -168,7 +167,7 @@ class GameOverSubstate extends MusicBeatSubstate
 					if (PlayState.isStoryMode)
 						Main.switchState(this, new StoryMenu());
 					else
-						Main.switchState(this, new FreeplayMenu());
+						Main.switchState(this, new FreeplayFatdon());
 				});
 			}
 		}

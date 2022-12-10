@@ -68,7 +68,7 @@ class PlayState extends MusicBeatState
 
 	// story mode stuffs, such as current week, difficulty, and song playlist;
 	public static var storyWeek:Int = 0;
-	public static var storyDifficulty:Int = 1;
+	public static var storyDifficulty:Int = 0;
 	public static var isStoryMode:Bool = false;
 	public static var storyPlaylist:Array<String> = [];
 	public static var campaignScore:Int = 0;
@@ -227,6 +227,7 @@ class PlayState extends MusicBeatState
 
 	public static var beatSpeed:Float = 4;
 	public static var beatZoom:Float = 0;
+	public static var voiceline:Bool = false;
 
 	var events:Array<TimedEvent> = [];
 
@@ -255,6 +256,8 @@ class PlayState extends MusicBeatState
 
 		externalCamX = 0;
 		externalCamY = 0;
+
+		voiceline = false;
 	}
 
 	/**
@@ -522,7 +525,15 @@ class PlayState extends MusicBeatState
 		Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
 
-		GameOverSubstate.resetGameOver();
+		switch (SONG.song.toLowerCase())
+		{
+			case "conscious":
+				GameOverSubstate.resetGameOver('abi-c', 'DeathSoundAbi', 'DeathMusicAbi');
+			case "paralyze":
+				GameOverSubstate.resetGameOver('para', 'DeathSoundAbi', 'DeathMusicAbi');
+			default:
+				GameOverSubstate.resetGameOver();
+		}
 
 		curStage = "";
 
@@ -873,7 +884,7 @@ class PlayState extends MusicBeatState
 					else
 					{
 						// thought it would look funny maybe;
-						if (Init.getSetting('Ghost Miss Animations'))
+						if (Init.getSetting('Ghost Miss Animations') && voiceline) //here it was breaking the voiceline so i just did this
 						{
 							var stringSect:String = Receptor.actions[key].toUpperCase();
 							if (bfStrums.character != null)
@@ -1066,8 +1077,8 @@ class PlayState extends MusicBeatState
 			}
 
 			// make sure you're not cheating lol
-			if (!isStoryMode)
-			{
+			//if (!isStoryMode)
+			//{
 				if (controls.CHEAT)
 				{
 					pauseGame();
@@ -1089,7 +1100,7 @@ class PlayState extends MusicBeatState
 					uiHUD.autoplayMark.alpha = 1;
 					uiHUD.autoplaySine = 0;
 				}
-			}
+			//}
 
 			Conductor.songPosition += elapsed * 1000 * Conductor.playbackRate;
 			if (startingSong && startedCountdown && Conductor.songPosition >= 0)
@@ -2150,9 +2161,6 @@ class PlayState extends MusicBeatState
 			case 'Change Zoom':
 				defaultCamZoom = Std.parseFloat(value1);
 			case 'Change Phase':
-				if (value2 == null || value2.length < 1)
-					value2 == 'dad';
-
 				switch (value2.toLowerCase().trim())
 				{
 					case 'bf' | 'boyfriend' | 'player' | '0':
@@ -2161,8 +2169,9 @@ class PlayState extends MusicBeatState
 						gf.idleSuffix = value1;
 					case 'dad' | 'dadOpponent' | 'opponent' | '1':
 						dad.idleSuffix = value1;
+					default:
+						dad.idleSuffix = value1;
 				}
-			
 			case 'Set GF Speed':
 				var speed:Int = Std.parseInt(value1);
 				if (Math.isNaN(speed) || speed <= 0)
@@ -2333,6 +2342,18 @@ class PlayState extends MusicBeatState
 		endingSong = true;
 		inCutscene = false;
 
+		switch (SONG.song.toLowerCase())
+		{
+			case 'paralyze':
+				FlxG.save.data.paralyzed = true;
+			case 'downward-spiral':
+				FlxG.save.data.week1 = true;
+			case 'barista':
+				FlxG.save.data.kys = true;
+		}
+
+		FlxG.save.flush();
+		
 		if (!endSongEvent)
 		{
 			if (checkTextbox())
@@ -2365,7 +2386,7 @@ class PlayState extends MusicBeatState
 			{
 				// enable memory cleaning
 				clearStored = true;
-				Main.switchState(this, new FreeplayMenu());
+				Main.switchState(this, new FreeplayFatdon());
 			}
 			else
 			{
@@ -2409,6 +2430,7 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
+
 				if (!skipCutscenes())
 					songCutscene();
 			}
@@ -2418,6 +2440,19 @@ class PlayState extends MusicBeatState
 	public function callDefaultSongEnd()
 	{
 		inCutscene = false;
+
+		switch (SONG.song.toLowerCase())
+		{
+			case 'paralyze':
+				FlxG.save.data.paralyzed = true;
+			case 'downward-spiral':
+				FlxG.save.data.week1 = true;
+			case 'barista':
+				FlxG.save.data.kys = true;
+		}
+
+		FlxG.save.flush();
+		
 		if (isStoryMode)
 		{
 			var difficulty:String = CoolUtil.returnDifficultySuffix().toLowerCase();
@@ -2435,11 +2470,16 @@ class PlayState extends MusicBeatState
 		{
 			// enable memory cleaning
 			clearStored = true;
-			Main.switchState(this, new FreeplayMenu());
+			Main.switchState(this, new FreeplayFatdon());
 		}
 	}
 
 	var dialogueBox:DialogueBox;
+
+	public static function hudFlash(duration:Float)
+	{
+		vignetteHUD.flash(FlxColor.WHITE, duration);
+	}
 
 	public function songCutscene()
 	{

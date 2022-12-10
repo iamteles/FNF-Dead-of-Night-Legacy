@@ -247,9 +247,9 @@ class PauseSubstate extends MusicBeatSubstate
 					// CoolUtil.difficulties = CoolUtil.baseDifficulties;
 
 					if (PlayState.isStoryMode)
-						Main.switchState(this, new StoryMenu());
+						Main.switchState(this, new MainMenu());
 					else
-						Main.switchState(this, new FreeplayMenu());
+						Main.switchState(this, new FreeplayFatdon());
 
 				case 'open editors':
 					EditorMenuSubstate.fromPause = true;

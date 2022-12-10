@@ -33,7 +33,7 @@ class ForeverTools
 			var menuSong:String = 'freakyMenu';
 			menuSong = Init.getSetting('Menu Song');
 
-			var song = Paths.music('menus/main/$menuSong/$menuSong');
+			var song = Paths.music('menus/main/fitdon/menu');
 			FlxG.sound.playMusic(song, (resetVolume) ? 0 : 0.7);
 			if (resetVolume)
 				FlxG.sound.music.fadeIn(4, 0, 0.7);

@@ -53,7 +53,7 @@
 			"fps": 24,
 			"anim": "singRIGHT",
 			"loop": false,
-			"name": "Abi Right"
+			"name": "Abi Left"
 		},
 		{
 			"offsets": [
@@ -64,7 +64,7 @@
 			"fps": 24,
 			"anim": "singLEFT",
 			"loop": false,
-			"name": "Abi Left"
+			"name": "Abi Right"
 		}
 	],
 	"no_antialiasing": false,

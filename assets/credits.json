@@ -86,6 +86,23 @@
 			]
 		},
 		{
+			"sectionName": "FRIDAY NIGHT FUNKIN: DEAD OF NIGHT",
+			"name": "Blaze",
+			"icon": "fitdon/blaze",
+			"textData": [
+				"Heartfelt events for Funkin: Dead of Night",
+				"hey guys, \nit's me awesome."
+			],
+			"urlData": {
+				"Youtube": "https://www.youtube.com/channel/UCxHjDEbm-RWWr_PSodXAZbg"
+			},
+			"colors": [
+				68,
+				213,
+				94
+			]
+		},
+		{
 			"sectionName": "FOREVER ENGINE: UNDERSCORE",
 			"name": "BeastlyGhost",
 			"icon": "underscore/ghost",

@@ -568,7 +568,7 @@ class DialogueBox extends FlxSpriteGroup
 
 			case "sound":
 				var _sound = eventArray[1] + "." + Paths.SOUND_EXT;
-				FlxG.sound.play(Paths.file(_sound));
+				FlxG.sound.play(openfl.media.Sound.fromFile(Paths.file(_sound)));
 		}
 	}
 

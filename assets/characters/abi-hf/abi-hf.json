@@ -1,0 +1,133 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-508,
+				-120
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Abi Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-487,
+				-103
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Abi Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-512,
+				-149
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Abi Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-529,
+				-116
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Abi Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-454,
+				-118
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Abi Right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-509,
+				-121
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle-alt",
+			"indices": [],
+			"name": "Abi IDLEAnnoyed"
+		},
+		{
+			"offsets": [
+				-534,
+				-122
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "Abi RIGHTAnnoyed"
+		},
+		{
+			"offsets": [
+				-493,
+				-103
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "Abi UPAnnoyed"
+		},
+		{
+			"offsets": [
+				-461,
+				-122
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "Abi LEFTAnnoyed"
+		},
+		{
+			"offsets": [
+				-514,
+				-149
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "Abi DOWNAnnoyed"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Heartfelt Abi",
+	"position": [
+		-820,
+		0
+	],
+	"healthicon": "abi",
+	"flip_x": true,
+	"healthbar_colors": [
+		255,
+		255,
+		140
+	],
+	"camera_position": [
+		600,
+		260
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

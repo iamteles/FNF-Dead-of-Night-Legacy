@@ -31,10 +31,21 @@ class Main extends Sprite
 
 	public static var engineVersion:String = '0.3'; // current forever engine underscore version;
 	public static var foreverVersion:String = '0.3.1'; // current forever engine version;
+	public static var fitdonVersion:String = '0.8';
 	public static var nightly:Bool = true;
 
 	public static var overlay:Overlay; // info counter that usually appears at the top left corner;
 	public static var console:Console; // console that appears when you press F10 (if allowed);
+
+	public static var gameWeeks:Array<Array<String>> = [
+		['Hushed', 'main'],
+		['Forewarn', 'main'],
+		['Downward-Spiral', 'main'],
+		['Gelid', 'post1'],
+		['Conscious', 'post1'],
+		['Heartfelt', 'post1'],
+		['Paralyze', 'paralyze']
+	];
 
 	// calls a function to set the game up
 	public function new()
