@@ -205,6 +205,8 @@ class DialogueBox extends FlxSpriteGroup
 
 	public function updateDialog(force:Bool = false)
 	{
+		if(dialogueData.dialogue[curPage] == null) return;
+		
 		// set current portrait
 		updateTextBox(force);
 		updatePortrait(force);

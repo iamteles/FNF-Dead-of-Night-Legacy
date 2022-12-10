@@ -12,7 +12,6 @@ function postCreate()
 	PlayState.vignetteHUD.fade(ForeverTools.returnColor('black'), 0.01, false);
 	PlayState.dad.alpha = 0.0001;
 	//PlayState.defaultCamZoom = 0.4;
-	PlayState.scriptDebugMode = true;
 
 	tween = FlxTween.tween(PlayState.dad, {y: PlayState.dad.y - 40}, 1.5, {type: FlxTween.PINGPONG, ease: FlxEase.sineInOut});
 }

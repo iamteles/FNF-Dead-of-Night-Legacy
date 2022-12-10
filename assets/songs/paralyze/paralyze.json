@@ -1,9 +1,9 @@
 {
 	"song": {
 		"speed": 2.7,
-		"stage": "stage",
-		"player1": "FITDON BF",
-		"player2": "A",
+		"stage": "alleyway",
+		"player1": "abi-p",
+		"player2": "ghost",
 		"events": [],
 		"notes": [
 			{
@@ -6361,11 +6361,11 @@
 		],
 		"splashSkin": null,
 		"validScore": true,
-		"gfVersion": "Fitdon GF",
+		"gfVersion": "gf",
 		"bpm": 165,
 		"needsVoices": true,
 		"assetModifiler": "base",
-		"song": "paralize",
+		"song": "paralyze",
 		"noteSkin": null,
 		"author": "???"
 	}

@@ -410,6 +410,12 @@ class Init extends FlxState
 		PlayerSettings.init();
 		Highscore.load();
 
+		if (FlxG.save.data.paralyzed = null)
+			FlxG.save.data.paralyzed = false;
+
+		if (FlxG.save.data.week1 = null)
+			FlxG.save.data.week1 = false;
+
 		// load forever settings;
 		loadControls();
 		loadSettings();

@@ -1077,8 +1077,8 @@ class PlayState extends MusicBeatState
 			}
 
 			// make sure you're not cheating lol
-			//if (!isStoryMode)
-			//{
+			if (!isStoryMode)
+			{
 				if (controls.CHEAT)
 				{
 					pauseGame();
@@ -1100,7 +1100,7 @@ class PlayState extends MusicBeatState
 					uiHUD.autoplayMark.alpha = 1;
 					uiHUD.autoplaySine = 0;
 				}
-			//}
+			}
 
 			Conductor.songPosition += elapsed * 1000 * Conductor.playbackRate;
 			if (startingSong && startedCountdown && Conductor.songPosition >= 0)
@@ -2419,7 +2419,7 @@ class PlayState extends MusicBeatState
 				FlxTransitionableState.skipNextTransOut = false;
 
 				// change to the menu state
-				Main.switchState(this, new StoryMenu());
+				Main.switchState(this, new MainMenu());
 
 				// save the week's score if the score is valid
 				if (SONG.validScore && !preventScoring)
@@ -2430,7 +2430,6 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
-
 				if (!skipCutscenes())
 					songCutscene();
 			}

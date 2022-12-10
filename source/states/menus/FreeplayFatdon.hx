@@ -33,7 +33,7 @@ class FreeplayFatdon extends MusicBeatState
 	public var curSelected:Int = -1;
 	public var menuItems:FlxTypedGroup<FlxSprite>;
 	public var camGame:FlxCamera;
-	var unlocked:Int = 3;
+	var unlocked:Int = 7;
 	var canSelect:Bool = true;
 
 	override function create()
@@ -41,12 +41,6 @@ class FreeplayFatdon extends MusicBeatState
 		super.create();
 
 		ForeverTools.resetMenuMusic();
-
-		if (FlxG.save.data.week1)
-			unlocked = 7;
-
-		if (FlxG.save.data.paralyzed = null)
-			FlxG.save.data.paralyzed = false;
 
 		camGame = new FlxCamera();
 		FlxG.cameras.reset(camGame);
@@ -58,7 +52,7 @@ class FreeplayFatdon extends MusicBeatState
 		for (i in 0...Main.gameWeeks.length)
 		{
 			var imgPath:String = 'menus/fitdon/freeplay/none';
-			if (!FlxG.save.data.paralyzed && Main.gameWeeks[i][0] != 'Paralyze')
+			if (!FlxG.save.data.paralyzed || Main.gameWeeks[i][0] != 'Paralyze')
 				imgPath = 'menus/fitdon/freeplay/' + Main.gameWeeks[i][0];
 			var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image(imgPath));
 			bg.updateHitbox();
