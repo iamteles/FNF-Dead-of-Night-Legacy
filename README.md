@@ -1,3 +1,12 @@
+SOURCE CODE FOR FITDON (Funkin in the dead of night)
+
+this is SOURCE CODE. To play the mod normally, you need to get it from the google drive link posted on gamebanana
+
+https://gamebanana.com/mods/416255
+
+
+VVV Forever engine underscore readme VVV
+
 # DEPRECATION NOTICE
 
 Forever Engine Underscore is currently deprecated, please redirect all current and future issues / improvements to the [new repository](https://github.com/BeastlyGhost/Forever-Engine-Feather)
