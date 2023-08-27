@@ -52,7 +52,7 @@ class FreeplayFatdon extends MusicBeatState
 		for (i in 0...Main.gameWeeks.length)
 		{
 			var imgPath:String = 'menus/fitdon/freeplay/none';
-			if (!FlxG.save.data.paralyzed || Main.gameWeeks[i][0] != 'Paralyze')
+			if (FlxG.save.data.paralyzed || Main.gameWeeks[i][0] != 'Paralyze')
 				imgPath = 'menus/fitdon/freeplay/' + Main.gameWeeks[i][0];
 			var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image(imgPath));
 			bg.updateHitbox();

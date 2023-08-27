@@ -172,7 +172,7 @@ class CreditsMenu extends MusicBeatState
 		add(menuBack);
 		menuBack.blend = MULTIPLY;
 
-		bDrop = new FlxBackdrop(Paths.image('menus/base/grid'), 8, 8, true, true, 1, 1);
+		bDrop = new FlxBackdrop(Paths.image('menus/base/grid'), XY, 0, 0);
 		bDrop.velocity.x = 30;
 		bDrop.velocity.y = 30;
 		bDrop.screenCenter();

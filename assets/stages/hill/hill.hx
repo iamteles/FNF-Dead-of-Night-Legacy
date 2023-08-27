@@ -1,16 +1,15 @@
 function generateStage()
 {
-  curStage = 'hill';
-  PlayState.defaultCamZoom = 0.4;
+  //PlayState.defaultCamZoom = 0.4;
 
-  var bg:FNFSprite = new FNFSprite(-300, -500).loadGraphic(Paths.image('sky', 'stages/' + curStage));
+	var bg:FNFSprite = new FNFSprite(-300, -500).loadGraphic(Paths.image('sky', 'stages/hill'));
 	bg.setGraphicSize(Std.int(bg.width * 1.7));
   bg.antialiasing = true;
   bg.scrollFactor.set(0.4, 0.4);
   bg.active = false;
   add(bg);
 
-  var grass:FNFSprite = new FNFSprite(-100, 516).loadGraphic(Paths.image('grass', 'stages/' + curStage));
+	var grass:FNFSprite = new FNFSprite(-100, 516).loadGraphic(Paths.image('grass', 'stages/hill'));
 	grass.setGraphicSize(Std.int(grass.width * 2.2));
   grass.antialiasing = true;
   grass.scrollFactor.set(1, 1);

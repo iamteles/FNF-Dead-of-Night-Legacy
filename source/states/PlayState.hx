@@ -53,8 +53,17 @@ using StringTools;
 import sys.FileSystem;
 import sys.io.File;
 #end
+
 #if VIDEO_PLUGIN
+#if (hxCodec >= "3.0.0")
+import hxcodec.flixel.FlxVideo as MP4Handler;
+#elseif (hxCodec >= "2.6.1")
+import hxcodec.VideoHandler as MP4Handler;
+#elseif (hxCodec == "2.6.0")
+import MP4Handler;
+#else
 import vlc.MP4Handler;
+#end
 #end
 
 class PlayState extends MusicBeatState
@@ -754,7 +763,7 @@ class PlayState extends MusicBeatState
 
 		callFunc('postCreate', []);
 	}
-
+	
 	public function playVideo(name:String)
 	{
 		#if VIDEO_PLUGIN
@@ -776,21 +785,30 @@ class PlayState extends MusicBeatState
 		}
 
 		var video:MP4Handler = new MP4Handler();
+		#if (hxCodec >= "3.0.0")
+		// Recent versions
+		video.play(filepath);
+		video.onEndReached.add(function()
+		{
+			video.dispose();
+			if (endingSong)
+				endSong();
+			else
+				callTextbox();
+			return;
+		}, true);
+		#else
+		// Older versions
 		video.playVideo(filepath);
 		video.finishCallback = function()
 		{
 			if (endingSong)
 				endSong();
 			else
-			{
-				new FlxTimer().start(0.5, function(tmr:FlxTimer)
-				{
-					callTextbox();
-				});
-			}
-
+				callTextbox();
 			return;
 		}
+		#end
 		#else
 		FlxG.log.warn('Platform not supported!');
 		if (endingSong)
@@ -1217,7 +1235,7 @@ class PlayState extends MusicBeatState
 			noteCalls();
 		}
 
-		if (!isStoryMode && !startingSong && !endingSong && scriptDebugMode)
+		if (/*!isStoryMode && */!startingSong/* && !endingSong && scriptDebugMode*/)
 		{
 			if (FlxG.keys.justPressed.F5)
 				eventNoteHit('Change Stage', PlayState.curStage, '0');
@@ -2053,9 +2071,11 @@ class PlayState extends MusicBeatState
 			if ((FlxG.camera.zoom < 1.35 && curBeat % beatSpeed == 0) && (!Init.getSetting('Reduced Movements')))
 			{
 				FlxG.camera.zoom += 0.015 + beatZoom;
+
 				camHUD.zoom += 0.05 + beatZoom;
 				for (hud in strumHUD)
 					hud.zoom += 0.05 + beatZoom;
+
 			}
 		}
 		if (SONG.notes[Math.floor(curStep / 16)] != null)

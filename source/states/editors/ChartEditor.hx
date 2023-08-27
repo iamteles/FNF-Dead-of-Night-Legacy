@@ -856,7 +856,7 @@ class ChartEditor extends MusicBeatState
 
 	private function generateBackground()
 	{
-		coolGrid = new FlxBackdrop(null, 1, 1, true, true, 1, 1);
+		coolGrid = new FlxBackdrop(null, XY, 0, 0);
 		coolGrid.loadGraphic(Paths.image('menus/chart/grid'));
 		coolGrid.alpha = (32 / 255);
 		add(coolGrid);

@@ -1,21 +1,20 @@
 function generateStage()
 {
-    curStage = 'alleyway';
-    PlayState.defaultCamZoom = 0.8;
+    //PlayState.defaultCamZoom = 0.8;
 
-    var bg:FNFSprite = new FNFSprite(-600, -200).loadGraphic(Paths.image('alley', 'stages/' + curStage));
+    var bg:FNFSprite = new FNFSprite(-600, -200).loadGraphic(Paths.image('alley', 'stages/alleyway'));
     bg.antialiasing = true;
     bg.scrollFactor.set(1, 1);
     bg.active = false;
     add(bg);
 
-	var wall:FNFSprite = new FNFSprite(-600, 800).loadGraphic(Paths.image('foreground brain', 'stages/' + curStage));
+	var wall:FNFSprite = new FNFSprite(-600, 800).loadGraphic(Paths.image('foreground brain', 'stages/alleyway'));
 	wall.antialiasing = true;
 	wall.scrollFactor.set(0.4, 0.4);
 	wall.active = false;
 	foreground.add(wall);
 
-	var head:FNFSprite = new FNFSprite(1200, 800).loadGraphic(Paths.image('foreground head', 'stages/' + curStage));
+	var head:FNFSprite = new FNFSprite(1200, 800).loadGraphic(Paths.image('foreground head', 'stages/alleyway'));
 	head.antialiasing = true;
 	head.scrollFactor.set(0.4, 0.4);
 	head.active = false;

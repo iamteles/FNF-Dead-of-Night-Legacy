@@ -1,9 +1,9 @@
 function generateStage()
 {
-    curStage = 'street';
-    PlayState.defaultCamZoom = 0.8;
+    //curStage = 'street';
+    //PlayState.defaultCamZoom = 0.8;
 
-    var bg:FNFSprite = new FNFSprite(-600, -200).loadGraphic(Paths.image('image', 'stages/' + curStage));
+    var bg:FNFSprite = new FNFSprite(-600, -200).loadGraphic(Paths.image('image', 'stages/street'));
     bg.antialiasing = true;
     bg.scrollFactor.set(1, 1);
     bg.active = false;
